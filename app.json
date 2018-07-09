@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/index/index",
+    "pages/list/detail/index",
+    "pages/news/list/index",
+    "pages/news/detail/index",
+    "pages/me/index/index",
+    "pages/cart/index/index",
+    "pages/me/wallet/index/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "纯然三七",
+    "navigationBarBackgroundColor": "#ffb53c",
+    "backgroundColor": "#ffb53c",
+    "color": "#040404"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/img/_home.png",
+        "selectedIconPath": "pages/img/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/index/index",
+        "iconPath": "pages/img/_list.png",
+        "selectedIconPath": "pages/img/list.png",
+        "text": "产品"
+      },
+      {
+        "pagePath": "pages/cart/index/index",
+        "iconPath": "pages/img/_cartb.png",
+        "selectedIconPath": "pages/img/cartb.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/news/list/index",
+        "iconPath": "pages/img/_active.png",
+        "selectedIconPath": "pages/img/active.png",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/me/index/index",
+        "iconPath": "pages/img/_my.png",
+        "selectedIconPath": "pages/img/my.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

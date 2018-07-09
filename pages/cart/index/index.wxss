@@ -1,0 +1,46 @@
+/* pages/list/index/index.wxss */
+.page-title{
+  font-size: 11pt;
+}
+.container{
+  margin-top:45px;
+}
+.tabTop{
+  height:45px;
+  background-color:#ffffff;
+}
+.cartbtn{
+  line-height: 45px;
+}
+.page-count{
+  font-size: 8pt;
+  line-height: 10px;
+}
+.payment{
+  height:25px;
+  line-height:25px;
+  width:80%;
+  color:#ffffff;
+  margin:0 auto;
+}
+.payment view{
+  text-align: center;
+  font-size: 12pt;
+}
+.paynum{
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  color: #000000;
+}
+.page-ad{
+  height:auto;
+}
+.page-price{
+  font-size: 15pt;
+}
+.right{
+  text-align: right;
+}
+.page-body-border{
+  width:97%;
+}

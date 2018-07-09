@@ -1,0 +1,115 @@
+<!--pages/me/index/index.wxml-->
+<view class="container">
+  <!--个人信息-->
+  <view class="metitle {{css}}_bg page-body">
+    <view class="page-item">
+      <image src='{{user.uimg}}'></image>
+    </view>
+    <view class="page-item item-70">
+      <view class="title">
+        {{user.uname}}
+      </view>
+      <view class="phone">
+        <image src='../../img/Phone.png'></image>
+        {{user.tel}}
+      </view>
+    </view>
+    <view class="page-item">
+      <view class="msg">
+        <image src='../../img/_msg.png'></image>
+      </view>
+    </view>
+  </view>
+  <!--模块-->
+  <view class="mecontent ">
+    <view class="page-body">
+      <navigator class="page-item item-50" url="../wallet/index/index">
+        <view class="meitem">
+          <view class="cover">
+            <image src='../../img/cash.png' mode='aspectFit'></image>
+            <view>{{wallet.bonus}} 元</view>
+          </view>
+          <view class="head">我的资产</view>
+          <view class="desc">
+            <text>{{wallet.totals}} 元营业额\n</text>
+            <text>{{wallet.sellcount}} 条销售记录</text>
+          </view>
+        </view>
+      </navigator>
+      <view class="page-item item-50 ">
+        <view class="meitem">
+          <view class="cover">
+            <image src='../../img/bill.png' mode='aspectFit'></image>
+            <view></view>
+          </view>
+          <view class="head">产品订单</view>
+          <view class="desc">
+            <text>2 订单正在处理中 \n</text>
+            <text>15 订单已完成</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--模块-->
+  <view class="mecontent ">
+    <view class="page-body">
+      <view class="page-item item-50 ">
+        <view class="meitem">
+          <view class="cover">
+            <image src='../../img/myloc.png' mode='aspectFit'></image>
+            <view></view>
+          </view>
+          <view class="head">联系地址</view>
+          <view class="desc">
+            <text>曲靖市麒麟区开化街道010号曲靖市消防大队</text>
+          </view>
+        </view>
+      </view>
+      <view class="page-item item-50 ">
+        <view class="meitem">
+          <view class="cover">
+            <image src='../../img/code.png' mode='aspectFit'></image>
+            <view></view>
+          </view>
+          <view class="head">推广二维码</view>
+          <view class="desc">
+            <text>通过在微信群或朋友圈中转发平台产品获得推广费用</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--模块-->
+  <view class="mecontent ">
+    <view class="page-body">
+      <view class="page-item item-50 ">
+        <view class="meitem">
+          <view class="cover">
+            <image src='../../img/love.png' mode='aspectFit'></image>
+            <view></view>
+          </view>
+          <view class="head">我的收藏</view>
+          <view class="desc">
+            <text>3件商品被收藏</text>
+          </view>
+        </view>
+      </view>
+      <view class="page-item item-50 ">
+        <view class="meitem">
+          <view class="cover">
+            <image src='../../img/kefu2.png' mode='aspectFit'></image>
+            <view></view>
+          </view>
+          <view class="head">客服咨询</view>
+          <view class="desc">
+            <text>实时解答您在平台上遇到的所有问题</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,181 @@
+<view class="container">
+  <!--分享和客服热线-->
+  <view class="page-right">
+    <image src="../../img/kefu.gif" style='width:80px;height:80px;margin-bottom:0'>
+    </image>
+    <image src="../../img/wx.png"></image>
+    <text>\n</text>
+    <image src="../../img/pyq.png"></image>
+  </view>
+
+  <!--封面图片-->
+  <view>
+    <swiper class="cover" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{detail.coverImgs}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <image src='../../res/{{item}}' mode="aspectFit"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--产品信息-->
+  <view class="desc {{css}}_border ">
+    <view style='padding:5px;padding-left:10px;padding-right:10px;'>
+      <view class="page-body">
+        <view class="page-item item-90 page-title">
+          <text>{{detail.title}}</text>
+        </view>
+        <view class="page-item item-10 page-center" bindtap='setLove'>
+          <image src="../../img/unlove.png" class="tip {{detail.love==true?'Hide':''}}"></image>
+          <image src="../../img/love.png" class="tip {{detail.love==true?'':'Hide'}}"></image>
+        </view>
+      </view>
+      <view class="page-desc">{{detail.desc}}</view>
+      <view class="page-ad page-left">
+        <text class="{{detail.ad%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+        <text class="{{detail.ad%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+        <text class="{{detail.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+      </view>
+      <view class='page-body'>
+        <view class="page-item item-60">
+          <text class="yuan">¥</text>
+          <text class="page-price">{{detail.price}}</text>
+          <text class="page-sale {{detail.ad%2==0 ? '' : 'Hide'}}">¥{{detail.sale}}</text>
+          <text class='page-units'>{{detail.unit}}</text>
+          <view class="page-grade">
+            <image src="../../img/selltip.png" class="tip-small2"></image>
+            <text>销售:</text>
+            <text class="page-grade-text">{{detail.sale}}</text>
+            <text>|</text>
+            <image src="../../img/comment.png" class="tip-small2"></image>
+            <text>好评率:</text>
+            <text class="page-grade-text">{{detail.comment}}</text>
+          </view>
+        </view>
+
+        <view class="page-item item-40">
+          <view class="payment page-body {{css}}_border">
+            <view class="page-item item-30 {{css}}_bgColor" bindtap='countPlus'>
+              +
+            </view>
+            <view class="page-item item-40 paynum">{{count}}</view>
+            <view class="page-item item-30 {{css}}_bgColor" bindtap='countMinus'>
+              -
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <!--信息备注-->
+  <view class='infoTab {{css}}_border'>
+    <view class="infoTab-view">
+      <text>产 地：</text>
+      <text class="info-text">{{detail.origin}}</text>
+    </view>
+    <view class="infoTab-view">
+      <text>规 格：</text>
+      <text class="info-text">{{detail.unit}}</text>
+    </view>
+    <view class="infoTab-view">
+      <text>快 递：</text>
+      <text class="info-text">{{ad_package}}</text>
+    </view>
+    <view class="infoTab-view">
+      <text>包 装：</text>
+      <text class="info-text">{{detail.packager}}</text>
+    </view>
+  </view>
+
+  <!--功能切换区-->
+  <view class="swiper-tab {{css}}_borderTop {{css}}_borderBottom {{css}}_fontColor">
+    <view class="swiper-tab-list {{currentTab==0 ?  '' : 'default_fontColor'}}" data-current="0" bindtap="swichNav">
+      产品介绍
+    </view>
+    <view class="swiper-tab-list {{css}}_borderLeft {{currentTab==1 ? '' : 'default_fontColor'}}" data-current="1" bindtap="swichNav">
+      用户评价(102)
+    </view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" style="height:{{defaultHeight}}px" duration="300" bindchange="bindChange">
+    <swiper-item>
+      <!--产品介绍-->
+      <view class="page-body" wx:for="{{detail.Imgs}}" wx:key="{{item.id}}" style='width:100%;'>
+        <image src='http://www.zhurendata.com/wxadmin/res/{{item}}' style='width:100%;' mode="aspectFilt"></image>
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+      <view class="comment" wx:for="{{comments}}" wx:key="{{item.cid}}">
+        <view class="comment-head">
+          <image class="comment-head-image" src='../../res/{{item.header}}'></image>
+          <view class="comment-name">
+            <view>{{item.uname}}</view>
+            <view class="comment-star" style='background-position:0px -{{(5-item.degree)*15}}px'></view>
+          </view>
+        </view>
+        <view class="comment-title">{{item.title}}</view>
+        <view class="comment-imgs">
+          <image src="../../res/{{imgs}}" wx:for="{{item.imgs}}" wx:for-item="imgs" wx:key="id" mode="aspectFill"></image>
+        </view>
+        <view class="comment-time">{{item.datetime}}</view>
+      </view>
+      <view class="comment-more {{css}}_bgColor">
+        更多评论
+      </view>
+    </swiper-item>
+  </swiper>
+
+
+
+  <!--产品分享-->
+
+
+
+  <!--用户评论-->
+
+
+
+  <!--说明信息-->
+
+  <!--结算区-->
+  <view class="payTab {{css}}_borderTop">
+    <view class="page-body" style='width:100%;'>
+      <view class="page-item item-20" bindtap='backHome'>
+        <image src="../../img/home.png" class="tip-big"></image>
+        <text>\n返回首页</text>
+      </view>
+      <view class="page-item item-20 " bindtap='backCart'>
+        <image src="../../img/cart.png" class="tip-big"></image>
+        <text>\n购物车</text>
+      </view>
+      <view class="page-item item-40 ">
+        <view class="payment page-body {{css}}_border" style='margin-top:12px;width:90%;'>
+          <view class="page-item item-30 {{css}}_bgColor" bindtap='countPlus'>
+            +
+          </view>
+          <view class="page-item item-40 paynum">{{count}}</view>
+          <view class="page-item item-30 {{css}}_bgColor" bindtap='countMinus'>
+            -
+          </view>
+        </view>
+      </view>
+      <view class="page-item item-20 bg_red">
+        <image src="../../img/pay.png" class="tip-big"></image>
+        <text style='color:#ffffff;'>\n前往结算</text>
+      </view>
+    </view>
+  </view>
+
+  <!--广告位-->
+  <view class="page-foot">
+    <image src='../../img/logo.png' style="height:40px;width:40px;"></image>
+    <text>\n</text>
+    <image src='../../img/logo2.png' style="height:20px;width:80px;"></image>
+    <text>\n</text>
+    <text style='color:#888;font-size:10pt;'>——————— 云南优润商贸有限公司 ———————</text>
+  </view>
+</view>

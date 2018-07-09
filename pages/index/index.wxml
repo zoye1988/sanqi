@@ -1,0 +1,176 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!--活动标语-->
+  <view class="page-tab {{AD ? '' : 'Hide'}}">
+    <image class="page-tab-img" mode="aspectFill" src='../img/ad/{{css}}_ad.png'></image>
+  </view>
+
+  <!--节日标题-->
+  <view class="page-tab">
+    <image class="page-tab-img" mode="aspectFill" src='../img/tab/{{css}}.png'></image>
+  </view>
+
+  <!--热门产品-->
+
+  <view class="page-hot">
+    <view class="page-body">
+      <view class="page-item item-3 {{css}}_titleColor">
+      </view>
+      <view class="page-item item-90 page-font-weight">
+        热门产品
+      </view>
+      <view class="page-item item-7">
+        <image src="../img/more.png" class="tip" />
+      </view>
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{hots}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <navigator class="page-body page-padding" url="../list/detail/index?nid=1">
+            <view class="page-item item-60 page-center">
+              <view class="page-title">{{item.title}}</view>
+              <view class="page-content">{{item.content}}</view>
+              <view class="page-center">
+                <view class="page-ad">
+                  <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+                  <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+                  <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+                </view>
+                <view class="price">
+                  <text class="yuan">¥</text>
+                  <text class="page-price">{{item.price}}</text>
+                  <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
+                  <text class='page-units'>{{item.unit}}</text>
+                </view>
+              </view>
+              <view class="page-radius {{css}}_bgColor">立即选购</view>
+            </view>
+            <view class="page-item item-40 page-center">
+              <image src='../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
+            </view>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+  <!--限时促销-->
+
+  <view class="page-deadline">
+    <view class="page-body {{css}}_borderBottom">
+      <view class="page-item item-3 {{css}}_titleColor">
+      </view>
+      <view class="page-item item-90 page-font-weight">
+        促销活动
+      </view>
+    </view>
+
+
+    <view wx:for="{{plans}}" wx:key="{{item.id}}">
+      <view class="page-body-mid page-padding" wx:if="{{index==0}}">
+        <view class="page-item item-40 page-center">
+          <image src='../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
+        </view>
+        <view class="page-item item-60">
+          <view class="page-title page-center">{{item.title}}</view>
+          <view class="page-desc">{{item.content}}</view>
+          <view class="page-grade">
+            <image src="../img/selltip.png" class="tip-small2"></image>
+            <text>销售:</text>
+            <text class="page-grade-text">{{item.sale}}</text>
+            <text>|</text>
+            <image src="../img/comment.png" class="tip-small2"></image>
+            <text>好评率:</text>
+            <text class="page-grade-text">{{item.comment}}</text>
+          </view>
+          <view class="page-ad">
+            <text class="{{item.ad%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+          </view>
+          <view class="price">
+            <text class="yuan">¥</text>
+            <text class="page-price">{{item.price}}</text>
+            <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
+          <text class="page-units">{{item.unit}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="page-body-ad" wx:if="{{index!=0}}">
+        <view class="page-item item-30 page-center">
+          <image src='../res/{{item.img}}' mode="aspectFit" class="page-body-image2"></image>
+        </view>
+        <view class="page-item item-70 page-border-left">
+          <view class="_page-title">{{item.title}}</view>
+          <view class="page-grade">
+            <image src="../img/selltip.png" class="tip-small2"></image>
+            <text>销售:{{item.sale}}</text>
+            <text>|</text>
+            <image src="../img/comment.png" class="tip-small2"></image>
+            <text>好评率:{{item.comment}}</text>
+          </view>
+          <view class="page-ad">
+            <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
+            <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
+            <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+          </view>
+          <view class="price">
+            <text class="yuan">¥</text>
+            <text class="page-price">{{item.price}}</text>
+            <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
+          <text class="page-units">{{item.unit}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+
+  </view>
+
+
+
+  <!--资讯-->
+  <view class="page-news ">
+    <view class="page-body">
+      <view class="page-item item-3 {{css}}_titleColor">
+      </view>
+      <view class="page-item item-90 page-font-weight">
+        纯然资讯
+      </view>
+      <view class="page-item item-7">
+        <image src="../img/more.png" class="tip" />
+      </view>
+    </view>
+    <view class="page-body" style='margin-top:10px;'>
+      <view class="page-item item-40 page-center">
+        <image src='../res/news.jpg' mode="aspectFill" class="page-body-image3"></image>
+      </view>
+      <view class="page-item item-60 page-padding">
+        <view class="page-title-small">三七粉的营养价值，你知道多少，主要在这三个方面</view>
+        <image src="../img/eye.png" class="tip-small2"></image>
+        <text class="page-grade">300</text>
+        <text class="page-grade">|</text>
+        <image src="../img/good.png" class="tip-small2"></image>
+        <text class="page-grade">20</text>
+        <view style='margin-top:40px;'>
+          <view class="page-item-news">
+            <text class="page-item-chap">#</text>17年前引起过轰动的台湾偶像剧鼻祖《流星花园》在视频平台重新上线</view>
+          <view class="page-item-news">
+            <text class="page-item-chap">#</text>我花六小时去到草莓音乐节，是为了听可爱的60岁女人唱歌</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--广告位-->
+  <view class="page-foot">
+    <image src='../img/logo.png' style="height:40px;width:40px;"></image>
+    <text>\n</text>
+    <image src='../img/logo2.png' style="height:20px;width:80px;"></image>
+    <text>\n</text>
+    <text style='color:#888;font-size:10pt;'>——————— 云南优润商贸有限公司 ———————</text>
+  </view>
+</view>

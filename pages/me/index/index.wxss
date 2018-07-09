@@ -1,0 +1,97 @@
+/* pages/me/index/index.wxss */
+.container{
+  background-color: #ffffff;
+  margin:0 auto;
+  width:97%;
+}
+.metitle{
+  margin:10px auto;
+  margin-top:20px;
+  width:95%;
+  height: 60px;
+  border-radius: 30px;
+}
+.metitle image{
+  width:60px;
+  height:60px;
+  border-radius: 30px;
+}
+.title{
+  line-height: 35px;
+  font-size: 15pt;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.phone{
+   line-height: 20px;
+   margin-left: 20px;
+   font-size: 11pt;
+}
+.phone image{
+  width:15px;
+  height:15px;
+  border-radius: 0px;
+  margin-left:0;
+  line-height: 30px;
+}
+.msg{
+  line-height: 10px;
+  font-size: 11pt;
+  margin-top:5px;
+  color:red;
+}
+.msg image{
+  width:20px;
+  height:20px;
+  border-radius: 0px;
+  margin-left:0;
+  line-height: 10px;
+}
+.mecontent{
+  margin:0 auto;
+}
+.meitem{
+  height: 160px;
+  width: 90%;
+  margin:5px;
+  border:1px solid #cdcdcd;
+}
+.meitem image{
+  height:30px;
+  width:30px;
+}
+.cover{
+  height: 30px;
+  margin-left: 10px;
+  margin-top:30px;
+  margin-bottom:20px;
+}
+.cover image{
+  width:30px;
+  height: 30px;
+  float: left;
+}
+.cover view{
+  margin-left: 10px;
+  font-size: 11pt;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+}
+.head{
+  margin-left:10px;
+  height:30px;
+  line-height: 30px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.desc{
+  font-size: 9pt;
+  margin: 0 auto;
+  width:90%;
+  margin-top: 5px;
+  height: 30px;
+  line-height: 15px;
+  overflow-y: hidden;
+  color:#888;
+}

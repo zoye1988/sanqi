@@ -1,0 +1,90 @@
+<!--pages/news/detail/index.wxml-->
+<view class="container">
+  <!--封面图片-->
+  <view class="cover">
+    <image src='../../res/{{news.cover}}' mode="aspectFill"></image>
+  </view>
+  <!--标题和卷首语-->
+  <view class="desc">
+    <view class="page-title">
+      <text>{{news.title}}</text>
+    </view>
+    <view class="page-desc">
+      <image src="../../img/eye.png" class="tip-small2"></image>
+      <text class="page-grade">300</text>
+    </view>
+    <!--正文-->
+    <view class="newsdesc">
+      {{news.desc}}
+    </view>
+    <view class="content" wx:for="{{news.content}}" wx:key="{{item.id}}">
+      {{item.words}}
+      <image src="../../res/{{item.img}}"></image>
+    </view>
+  </view>
+
+  <view class="desc">
+    <view class="newsfoot">
+      <image src='../../img/tip.png' class="tip"></image>
+      <text wx:for="{{news.keywords}}" wx:for-item="keywords" wx:key="nid">{{keywords}}</text>
+    </view>
+  </view>
+
+  <!--产品关联-->
+  <view class="desc">
+    <view class="page-body {{css}}_borderBottom">
+      <view class="page-item item-3 {{css}}_titleColor">
+      </view>
+      <view class="page-item item-90 page-font-weight">
+        相关产品
+      </view>
+    </view>
+
+    <view class="page-body-small" wx:for="{{ads}}" wx:key="{{item.id}}">
+      <view class="page-item item-30 page-center">
+        <image src='../../res/{{item.img}}' mode="aspectFit" class="page-body-image2"></image>
+      </view>
+      <view class="page-item item-70 page-border-left">
+        <view class="_page-title">{{item.title}}</view>
+        <view class="page-grade">
+          <image src="../../img/selltip.png" class="tip-small2"></image>
+          <text>销售:{{item.sale}}</text>
+          <text>|</text>
+          <image src="../../img/comment.png" class="tip-small2"></image>
+          <text>好评率:{{item.comment}}</text>
+        </view>
+        <view class="page-ad">
+          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
+          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
+          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+        </view>
+        <view class="price">
+          <text class="yuan">¥</text>
+          <text class="page-price">{{item.price}}</text>
+          <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
+          <text class="page-units">{{item.unit}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--点赞-->
+
+  <!--分享和客服热线-->
+  <view class="page-right">
+    <image src="../../img/kefu.gif" style='width:80px;height:80px;margin-bottom:0'>
+    </image>
+    <image src="../../img/wx.png"></image>
+    <text>\n</text>
+    <image src="../../img/pyq.png"></image>
+  </view>
+
+
+  <!--广告位-->
+  <view class="page-foot">
+    <image src='../../img/logo.png' style="height:40px;width:40px;"></image>
+    <text>\n</text>
+    <image src='../../img/logo2.png' style="height:20px;width:80px;"></image>
+    <text>\n</text>
+    <text style='color:#888;font-size:10pt;'>——————— 云南优润商贸有限公司 ———————</text>
+  </view>
+</view>
