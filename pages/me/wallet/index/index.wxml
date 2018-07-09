@@ -12,6 +12,7 @@
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
       <view class="page-item item-90 page-font-weight">
+        共计 118 条销售记录
       </view>
     </view>
 
@@ -34,6 +35,19 @@
       </view>
       <view class="page-item item-50 page-left">
         <view class="page-title ">李白</view>
+        <view class="page-desc">2018-02-08</view>
+      </view>
+      <view class="page-item item-20 page-center bonusItem">
+        + 10.00
+      </view>
+    </view>
+
+    <view class="page-body-border page-padding">
+      <view class="page-item item-30 page-center ">
+        <image src='../../../res/head.jpg' mode="aspectFit" class="page-body-image metitle"></image>
+      </view>
+      <view class="page-item item-50 page-left">
+        <view class="page-title ">dudu</view>
         <view class="page-desc">2018-02-08</view>
       </view>
       <view class="page-item item-20 page-center bonusItem">
