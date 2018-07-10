@@ -56,11 +56,11 @@
 
   <view class="address-border page-padding">
     <view class="page-body">
-      <view class="page-item item-40 page-left page-title">
+      <view class="page-item item-50 page-left page-title">
         <image src="../../img/uname.png" class="tip-small"></image>
         邓恒静
       </view>
-      <view class="page-item item-60 page-center page-title">
+      <view class="page-item item-50 page-center page-title">
         <image src="../../img/uphone.png" class="tip-small"></image>
         15288653843
       </view>
