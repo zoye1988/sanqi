@@ -11,7 +11,7 @@
       <view class="page-body {{css}}_borderBottom" >
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
-      <view class="page-item item-90 page-font-weight page-left">
+      <view class="page-item item-90 page-font-weight page-left" style='padding-top:5px;padding-bottom:5px;'>
         {{wallet.sellcount}} 条销售记录
       </view>
     </view>
@@ -19,6 +19,11 @@
   </view>
   <!--详细列表-->
   <view style='margin:0 auto;'>
+  
+    <view class="page-center page-empty {{records.length==0?'':'Hide'}}">
+      <image src='../../../img/empty.png' class="tip-huge"></image>
+      <view>~ 空空如也 ~</view>
+    </view>
 
     <view class="page-body-border page-padding"  wx:for="{{records}}" wx:key="{{item.id}}">
       <view class="page-item item-20 page-center ">
