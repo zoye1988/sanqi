@@ -8,7 +8,14 @@
     "pages/me/index/index",
     "pages/cart/index/index",
     "pages/me/wallet/index/index",
-    "pages/me/bill/list"
+    "pages/me/bill/list/index",
+    "pages/me/bill/detail/index",
+    "pages/me/address/index",
+    "pages/me/love/list",
+    "pages/me/qrcode/index",
+    "pages/me/servicer/customer/index",
+    "pages/me/servicer/seller/index",
+    "pages/me/bill/logistics/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",
