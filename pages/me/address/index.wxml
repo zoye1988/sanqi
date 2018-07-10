@@ -1,5 +1,5 @@
 <view class="container">
-
+  <!--地址-->
   <view class="address-border page-padding">
     <view class="page-body">
       <view class="page-item item-40 page-left page-title">
@@ -79,6 +79,11 @@
         <view class="delBtn">删 除</view>
       </view>
     </view>
+  </view>
+
+  <!--底部新增-->
+  <view class="tabBottom">
+    test
   </view>
 
 </view>
