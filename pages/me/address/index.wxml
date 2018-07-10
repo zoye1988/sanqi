@@ -1,89 +1,38 @@
 <view class="container">
   <!--地址-->
-  <view class="address-border page-padding">
+  <view class="address-border page-padding"  wx:for="{{lists}}" wx:key="{{item.id}}">
     <view class="page-body">
       <view class="page-item item-40 page-left page-title">
         <image src="../../img/uname.png" class="tip-small"></image>
-        邓恒静
+        {{item.uname}}
       </view>
       <view class="page-item item-60 page-center page-title">
         <image src="../../img/uphone.png" class="tip-small"></image>
-        15288653843
+        {{item.uphone}}
       </view>
     </view>
     <view class="page-body">
       <view class="page-item item-100 page-left page-desc">
         <image src="../../img/uaddress.png" class="tip-small"></image>
-        云南省曲靖市麒麟区建宁东路880号
+        {{item.address}}
       </view>
     </view>
     <view class="page-body">
       <view class="page-item item-80 page-left">
-        <radio class="radio"><text>默认地址</text></radio>
+        <radio class="radio" checked="{{item.checked}}" bindtap='updateAddress' data-index='{{item.id}}'><text>默认地址</text></radio>
       </view>
       <view class="page-item item-20 page-center">
-        <view class="delBtn">删 除</view>
-      </view>
-    </view>
-  </view>
-
-  <view class="address-border page-padding">
-    <view class="page-body">
-      <view class="page-item item-40 page-left page-title">
-        <image src="../../img/uname.png" class="tip-small"></image>
-        邓恒静
-      </view>
-      <view class="page-item item-60 page-center page-title">
-        <image src="../../img/uphone.png" class="tip-small"></image>
-        15288653843
-      </view>
-    </view>
-    <view class="page-body">
-      <view class="page-item item-100 page-left page-desc">
-        <image src="../../img/uaddress.png" class="tip-small"></image>
-        云南省曲靖市麒麟区建宁东路880号
-      </view>
-    </view>
-    <view class="page-body">
-      <view class="page-item item-80 page-left">
-        <radio class="radio"><text>默认地址</text></radio>
-      </view>
-      <view class="page-item item-20 page-center">
-        <view class="delBtn">删 除</view>
-      </view>
-    </view>
-  </view>
-
-  <view class="address-border page-padding">
-    <view class="page-body">
-      <view class="page-item item-50 page-left page-title">
-        <image src="../../img/uname.png" class="tip-small"></image>
-        邓恒静
-      </view>
-      <view class="page-item item-50 page-center page-title">
-        <image src="../../img/uphone.png" class="tip-small"></image>
-        15288653843
-      </view>
-    </view>
-    <view class="page-body">
-      <view class="page-item item-100 page-left page-desc">
-        <image src="../../img/uaddress.png" class="tip-small"></image>
-        云南省曲靖市麒麟区建宁东路880号
-      </view>
-    </view>
-    <view class="page-body">
-      <view class="page-item item-80 page-left">
-        <radio class="radio"><text>默认地址</text></radio>
-      </view>
-      <view class="page-item item-20 page-center">
-        <view class="delBtn">删 除</view>
+        <view class="delBtn {{css}}_border {{item.checked==true?'Hide':''}}" data-index='{{item.id}}' bindtap='delAddress'>删 除</view>
       </view>
     </view>
   </view>
 
   <!--底部新增-->
   <view class="tabBottom">
-    test
+    <view class="page-radius {{css}}_bgColor">
+      <image src="../../img/plus.png" class="tip"></image>
+      <text>增加地址</text>
+    </view>
   </view>
 
 </view>

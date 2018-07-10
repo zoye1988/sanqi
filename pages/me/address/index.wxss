@@ -29,8 +29,17 @@
   font-size: 10pt;
   margin-left:5px;
 }
+.tabBottom{
+  bottom:10px;
+}
+.page-radius{
+  line-height: 30px;
+  border-radius: 40px;
+}
+.page-radius text{
+  margin-left:5px;
+}
 .delBtn{
-  border:1px solid #e4e3e3;
   font-size: 10pt;
   line-height: 20px;
   padding:2px;
