@@ -20,19 +20,18 @@
   <!--详细列表-->
   <view style='margin:0 auto;'>
 
-    <view class="page-body-border page-padding">
+    <view class="page-body-border page-padding"  wx:for="{{records}}" wx:key="{{item.id}}">
       <view class="page-item item-20 page-center ">
-        <image src='../../../res/head.jpg' mode="aspectFit" class="page-body-image metitle"></image>
+        <image src='{{item.uimg}}' mode="aspectFit" class="page-body-image metitle"></image>
       </view>
-      <view class="page-item item-40 page-left">
-        <view class="page-title ">李白</view>
-        <view class="page-desc">2018-02-08</view>
+      <view class="page-item item-60 page-left">
+        <view class="page-title ">{{item.uname}}</view>
+        <view class="page-desc">订单编号：{{item.bill}}</view>
+        <view class="page-desc">订单日期：{{item.time}}</view>
       </view>
-      <view class="page-item item-20 page-center bonusItem">
-        业务提成
-      </view>
-      <view class="page-item item-20 page-center bonusItem">
-        +800.00
+      <view class="page-item item-20 page-center bonusItem" style='color:{{item.color}}'>
+        <text>{{item.work}}\n</text>
+        <text>{{item.bonus}}</text>
       </view>
     </view>
 

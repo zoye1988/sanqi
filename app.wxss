@@ -222,6 +222,9 @@
 .item-10{
   width:10%;
 }
+.item-15{
+  width:15%;
+}
 .item-20{
   width:20%;
 }
@@ -239,6 +242,9 @@
 }
 .item-60{
   width:60%;
+}
+.item-65{
+  width:65%;
 }
 .item-70{
   width:70%;
