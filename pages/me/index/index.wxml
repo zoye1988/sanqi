@@ -55,7 +55,7 @@
   <!--模块-->
   <view class="mecontent ">
     <view class="page-body">
-      <view class="page-item item-50 ">
+      <navigator class="page-item item-50 " url="../address/index">
         <view class="meitem">
           <view class="cover">
             <image src='../../img/myloc.png' mode='aspectFit'></image>
@@ -66,7 +66,7 @@
             <text>曲靖市麒麟区开化街道010号曲靖市消防大队</text>
           </view>
         </view>
-      </view>
+      </navigator>
       <view class="page-item item-50 ">
         <view class="meitem">
           <view class="cover">
