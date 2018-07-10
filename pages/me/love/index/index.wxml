@@ -1,2 +1,66 @@
-<!--pages/me/love/index/index.wxml-->
-<text>pages/me/love/index/index.wxml</text>
+<!--pages/list/index/index.wxml-->
+<view class="container">
+
+  <!--检索功能-->
+  <view class="page-body tabTop {{css}}_bgColor">
+    <view class="page-item item-90 search">
+      <input type="text" name="keyword" placeholder="最受欢迎产品" />
+    </view>
+    <view class="page-item item-10">
+      <image class="tip-big" style='margin-top:5px;' src="../../../img/search.png" />
+    </view>
+  </view>
+  
+  <!--活动标语
+  <view class="page-tab {{AD ? 'Show' : 'Hide'}}">
+    <image class="page-tab-img" mode="aspectFill" src='../../img/ad/{{css}}_ad.png'></image>
+  </view>
+  -->
+  <!--商品列表-->
+  <view>
+    <navigator class="page-body-border page-padding " wx:for="{{lists}}" wx:key="{{item.id}}" url="../detail/index">
+      <view class="page-item item-40 page-center ">
+        <image src='../../../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
+      </view>
+      <view class="page-item item-60 page-center">
+        <view class="page-title ">{{item.title}}</view>
+        <view class="page-desc">{{item.content}}</view>
+        <view class="page-grade">
+          <image src="../../../img/selltip.png" class="tip-small2"></image>
+          <text>销售:</text>
+          <text class="page-grade-text">{{item.sale}}</text>
+          <text>|</text>
+          <image src="../../../img/comment.png" class="tip-small2"></image>
+          <text>好评率:</text>
+          <text class="page-grade-text">{{item.comment}}</text>
+        </view>
+        <view class="page-ad page-left">
+          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
+          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
+          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+        </view>
+        <view class="price">
+          <text class="yuan">¥</text>
+          <text class="page-price">{{item.price}}</text>
+          <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
+          <text class="page-units">{{item.unit}}</text>
+        </view>
+        
+        <view class="page-radius {{css}}_border {{css}}_fontColor">
+          立即抢购
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+
+  <!--广告位-->
+  <view class="page-foot">
+    <image src='../../../img/logo.png' style="height:40px;width:40px;"></image>
+    <text>\n</text>
+    <image src='../../../img/logo2.png' style="height:20px;width:80px;"></image>
+    <text>\n</text>
+    <text style='color:#888;font-size:10pt;'>——————— 云南优润商贸有限公司 ———————</text>
+  </view>
+
+</view>

@@ -1,1 +1,7 @@
-/* pages/me/love/index/index.wxss */
+/* pages/list/index/index.wxss */
+.page-title{
+  font-size: 11pt;
+}
+.container{
+  margin-top:40px;
+}
