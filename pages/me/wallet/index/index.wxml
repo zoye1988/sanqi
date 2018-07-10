@@ -20,7 +20,7 @@
   <!--详细列表-->
   <view style='margin:0 auto;'>
   
-    <view class="page-center page-empty {{records.length==0?'Hide':''}}">
+    <view class="page-center page-empty {{records.length==0?'':'Hide'}}">
       <image src='../../../img/empty.png'></image>
       <view>~ 空空如也 ~</view>
     </view>
