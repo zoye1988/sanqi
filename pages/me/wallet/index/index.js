@@ -17,7 +17,7 @@ Page({
       {
         uname: "李白",
         bill:"YRSM201802150023",
-        uimg: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531195129988&di=f6c820ab936834766a0bffeaf6cd4149&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201508%2F09%2F20150809005334_rxVJH.jpeg",
+        uimg: "http://k2.jsqq.net/uploads/allimg/1706/7_170629161043_2.jpg",
         color: "#0cca67",
         work: "奖金",
         bonus: "+800.00",

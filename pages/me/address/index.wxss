@@ -6,8 +6,19 @@
   margin:5px auto;
   width:94%;
   font-size:10pt;
-  border-bottom:1px solid #e4e3e3;
+  border:1px solid #e4e3e3;
+  border-radius: 10px;
   background-color:#ffffff;
+}
+.address-border2{
+  margin:5px auto;
+  width:94%;
+  font-size:10pt;
+  border-radius: 10px;
+  background-color:#ffffff;
+}
+input{
+  font-size: 10pt;
 }
 .page-title{
   border:0;
@@ -17,6 +28,12 @@
   font-size:10pt;
   height:45px;
   line-height: 15px;
+  border-bottom:1px solid #efefef;
+}
+.page-desc2{
+  font-size:10pt;
+  height:25px;
+  line-height: 25px;
   border-bottom:1px solid #efefef;
 }
 .page-item{
@@ -43,5 +60,7 @@
   font-size: 10pt;
   line-height: 20px;
   padding:2px;
-  width:50px;
+  width:70px;
+  border:1px solid black;
+  color:black;
 }

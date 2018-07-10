@@ -5,7 +5,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    css:"moon",
+    css:"common",
     AD:true,     //广告位
     ad_package:"满200包邮",
     ad_minus:"满100减10",

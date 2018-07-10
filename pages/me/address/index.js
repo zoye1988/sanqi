@@ -8,6 +8,7 @@ Page({
   data: {
     css: app.globalData.css,
     AD: app.globalData.AD,
+    status:true,
     lists: [
       {
         id: 1,
