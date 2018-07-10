@@ -8,6 +8,11 @@ Page({
   data: {
     css: app.globalData.css,
     AD: app.globalData.AD,
+    wallet: {
+      totals: 1550.50, //销售额
+      bonus: 500.50, //奖金提成
+      sellcount: 15 //销售记录总数
+    }
   },
 
   /**

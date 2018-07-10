@@ -1,31 +1,38 @@
 <view class="container">
   <!--金额显示-->
-  <view class="page-center bonus tabTop {{css}}_bgColor">
-    <image src="../../../img/bonus.png" class="tip-huge"></image>
-    <view style='font-size:15pt;font-weight:bolder;line-height:40px;'>¥ 1553.20</view>
-    <button type="primary" class="bonusBtn">提 现</button>
-    <image src="../../../img/white.png" style='width:100%;height:40px;'></image>
-  </view>
-  <!--详细列表-->
-  <view style='margin:0 auto;width:99%;'>
-    <view class="page-body {{css}}_borderBottom">
+  <view class="tabTop">
+    <view class="page-center {{css}}_bgColor bonus">
+      <image src="../../../img/bonus.png" class="tip-huge"></image>
+      <view style='font-size:15pt;font-weight:bolder;line-height:40px;color:#ffffff'>¥ {{wallet.bonus}}</view>
+      <button type="primary" class="bonusBtn">提 现</button>
+      <image src="../../../img/white.png" style='width:100%;height:40px;'></image>
+    </view>
+    <view style='background-color:#ffffff;'>
+      <view class="page-body {{css}}_borderBottom" >
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
-      <view class="page-item item-90 page-font-weight">
-        共计 118 条销售记录
+      <view class="page-item item-90 page-font-weight page-left">
+        {{wallet.sellcount}} 条销售记录
       </view>
     </view>
+    </view>
+  </view>
+  <!--详细列表-->
+  <view style='margin:0 auto;'>
 
     <view class="page-body-border page-padding">
       <view class="page-item item-20 page-center ">
         <image src='../../../res/head.jpg' mode="aspectFit" class="page-body-image metitle"></image>
       </view>
-      <view class="page-item item-60 page-left">
+      <view class="page-item item-40 page-left">
         <view class="page-title ">李白</view>
         <view class="page-desc">2018-02-08</view>
       </view>
       <view class="page-item item-20 page-center bonusItem">
-        + 800.00
+        业务提成
+      </view>
+      <view class="page-item item-20 page-center bonusItem">
+        +800.00
       </view>
     </view>
 
