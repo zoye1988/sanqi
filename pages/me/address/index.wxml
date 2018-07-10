@@ -33,7 +33,7 @@
     </view>
   </view>
   <!--新建地址-->
-  <view class="address-border2 {{css}}_border page-padding  {{status==true?'':'Hide'}}">
+  <view class="address-border2 {{css}}_border page-padding  {{status==false?'':'Hide'}}">
     <view class="page-body">
       <view class="page-item item-100 page-left page-desc2" style='padding-bottom:5px;'>
         新增地址
@@ -58,7 +58,7 @@
         <image src="../../img/uaddress.png" class="tip-small" style='border-right:1px solid #888;padding-right:10px;'></image>
       </view>
       <view class="page-item item-70 page-desc2">
-        <input type='text' placeholder="请输入收货人地址" placeholder-style="color:#888" value="{{title}}" ></input>
+        <text>测试地址</text>
       </view>
       <view class="page-item item-20 page-desc2">
         <view class="delBtn" bindtap='delAddress'>获取地址</view>
@@ -66,13 +66,13 @@
     </view>
     <view class="page-body">
       <view class="page-item item-100 page-left">
-        <view class="delBtn page-radius" bindtap='delAddress'>提交</view>
+        <view class="delBtn page-radius" bindtap='postAddress'>提交</view>
       </view>
     </view>
   </view>
   <!--底部新增-->
   <view class="tabBottom">
-    <view class="page-radius {{css}}_bgColor {{status==true?'':'Hide'}}">
+    <view bindtap='newAddress' class="page-radius {{css}}_bgColor {{status==true?'':'Hide'}}">
       <image src="../../img/plus.png" class="tip"></image>
       <text>增加地址</text>
     </view>

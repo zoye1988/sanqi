@@ -30,6 +30,20 @@ Page({
         uphone: "15288653843",
         address: "云南省曲靖市麒麟区建宁东路880号",
         checked: false
+      },
+      {
+        id: 3,
+        uname: "邓恒静",
+        uphone: "15288653843",
+        address: "云南省曲靖市麒麟区建宁东路880号",
+        checked: false
+      },
+      {
+        id: 3,
+        uname: "邓恒静",
+        uphone: "15288653843",
+        address: "云南省曲靖市麒麟区建宁东路880号",
+        checked: false
       }
     ]
   },
@@ -108,4 +122,18 @@ Page({
   onHide: function () {
 
   },
+  newAddress:function(){
+    var status=this.data.status;
+    if(status==true){
+      status=false;
+    }else{
+      status=true;
+    }
+    this.setData({
+      status:status
+    });
+  },
+  postAddress:function(){
+    this.newAddress();
+  }
 })

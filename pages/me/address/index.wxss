@@ -1,66 +1,80 @@
 /* pages/me/address/index.wxss */
-.page-body{
-  padding:10px;
+.page-body {
+  padding: 10px;
 }
-.address-border{
-  margin:5px auto;
-  width:94%;
-  font-size:10pt;
-  border:1px solid #e4e3e3;
+
+.address-border {
+  margin: 5px auto;
+  padding-top: 10px;
+  width: 94%;
+  font-size: 10pt;
+  border: 1px solid #e4e3e3;
   border-radius: 10px;
-  background-color:#ffffff;
+  background-color: #fff;
 }
-.address-border2{
-  margin:5px auto;
-  width:94%;
-  font-size:10pt;
+
+.address-border2 {
+  margin: 5px auto;
+  width: 94%;
+  font-size: 10pt;
   border-radius: 10px;
-  background-color:#ffffff;
+  background-color: #fff;
 }
-input{
+
+input {
   font-size: 10pt;
 }
-.page-title{
-  border:0;
+
+.page-title {
+  border: 0;
   line-height: 15px;
 }
-.page-desc{
-  font-size:10pt;
-  height:45px;
+
+.page-desc {
+  font-size: 10pt;
+  height: 45px;
   line-height: 15px;
-  border-bottom:1px solid #efefef;
+  border-bottom: 1px solid #efefef;
 }
-.page-desc2{
-  font-size:10pt;
-  height:25px;
+
+.page-desc2 {
+  font-size: 10pt;
+  height: 25px;
   line-height: 25px;
-  border-bottom:1px solid #efefef;
+  border-bottom: 1px solid #efefef;
 }
-.page-item{
-  padding:0;
+
+.page-item {
+  padding: 0;
 }
-.page-body{
-  padding:5px;
+
+.page-body {
+  padding: 5px;
 }
-.radio text{
+
+.radio text {
   font-size: 10pt;
-  margin-left:5px;
+  margin-left: 5px;
 }
-.tabBottom{
-  bottom:10px;
+
+.tabBottom {
+  bottom: 10px;
 }
-.page-radius{
+
+.page-radius {
   line-height: 30px;
   border-radius: 40px;
 }
-.page-radius text{
-  margin-left:5px;
+
+.page-radius text {
+  margin-left: 5px;
 }
-.delBtn{
+
+.delBtn {
   font-size: 10pt;
   line-height: 20px;
-  padding:2px;
-  width:70px;
-  border:1px solid black;
-  color:black;
+  padding: 2px;
+  width: 60px;
+  border: 1px solid black;
+  color: black;
 }
