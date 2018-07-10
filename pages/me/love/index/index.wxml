@@ -18,8 +18,8 @@
   -->
   <!--商品列表-->
   <view>
-    <view class="page-center page-empty {{lists.length==0?'':'Hide'}}">
-      <image src='../../../img/empty.png' class="tip-huge"></image>
+    <view class="page-center page-empty {{lists.length==0?'Hide':''}}">
+      <image src='../../../img/empty.png'></image>
       <view>~ 空空如也 ~</view>
     </view>
     <navigator class="page-body-border page-padding " wx:for="{{lists}}" wx:key="{{item.id}}" url="/pages/list/detail/index">
