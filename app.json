@@ -11,11 +11,11 @@
     "pages/me/bill/list/index",
     "pages/me/bill/detail/index",
     "pages/me/address/index",
-    "pages/me/love/list",
     "pages/me/qrcode/index",
     "pages/me/servicer/customer/index",
     "pages/me/servicer/seller/index",
-    "pages/me/bill/logistics/index"
+    "pages/me/bill/logistics/index",
+    "pages/me/love/index/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",

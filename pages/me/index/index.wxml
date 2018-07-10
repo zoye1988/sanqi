@@ -85,7 +85,7 @@
   <!--模块-->
   <view class="mecontent ">
     <view class="page-body">
-      <view class="page-item item-50 ">
+      <navigator class="page-item item-50 " url="../love/index/index">
         <view class="meitem">
           <view class="cover">
             <image src='../../img/love.png' mode='aspectFit'></image>
@@ -96,7 +96,7 @@
             <text>3件商品被收藏</text>
           </view>
         </view>
-      </view>
+      </navigator>
       <view class="page-item item-50 ">
         <view class="meitem">
           <view class="cover">
