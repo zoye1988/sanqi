@@ -1,6 +1,6 @@
 /* pages/me/wallet/index/index.wxss */
 .container{
-  margin-top:185px;
+  margin-top:190px;
 }
 .bonus{
   padding-top:20px;
@@ -23,6 +23,15 @@
 }
 .bonusItem{
   color:#fc5b40;
-  line-height: 45px;
+  line-height: 50px;
   font-size:12pt;
+}
+.page-title{
+  line-height: 25px;
+}
+.page-desc{
+  line-height: 25px;
+}
+.page-item {
+  padding:0;
 }

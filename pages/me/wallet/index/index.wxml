@@ -7,7 +7,7 @@
     <image src="../../../img/white.png" style='width:100%;height:40px;'></image>
   </view>
   <!--详细列表-->
-  <view style='margin:0 auto;width:98%;'>
+  <view style='margin:0 auto;width:99%;'>
     <view class="page-body {{css}}_borderBottom">
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
@@ -17,41 +17,15 @@
     </view>
 
     <view class="page-body-border page-padding">
-      <view class="page-item item-30 page-center ">
+      <view class="page-item item-20 page-center ">
         <image src='../../../res/head.jpg' mode="aspectFit" class="page-body-image metitle"></image>
       </view>
-      <view class="page-item item-50 page-left">
+      <view class="page-item item-60 page-left">
         <view class="page-title ">李白</view>
         <view class="page-desc">2018-02-08</view>
       </view>
       <view class="page-item item-20 page-center bonusItem">
         + 800.00
-      </view>
-    </view>
-
-    <view class="page-body-border page-padding">
-      <view class="page-item item-30 page-center ">
-        <image src='../../../res/head.jpg' mode="aspectFit" class="page-body-image metitle"></image>
-      </view>
-      <view class="page-item item-50 page-left">
-        <view class="page-title ">李白</view>
-        <view class="page-desc">2018-02-08</view>
-      </view>
-      <view class="page-item item-20 page-center bonusItem">
-        + 10.00
-      </view>
-    </view>
-
-    <view class="page-body-border page-padding">
-      <view class="page-item item-30 page-center ">
-        <image src='../../../res/head.jpg' mode="aspectFit" class="page-body-image metitle"></image>
-      </view>
-      <view class="page-item item-50 page-left">
-        <view class="page-title ">dudu</view>
-        <view class="page-desc">2018-02-08</view>
-      </view>
-      <view class="page-item item-20 page-center bonusItem">
-        + 10.00
       </view>
     </view>
 
