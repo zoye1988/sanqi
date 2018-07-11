@@ -23,6 +23,8 @@
 
 input {
   font-size: 10pt;
+  line-height: 25px;
+  height: 25px;
 }
 
 .page-title {

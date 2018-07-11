@@ -9,6 +9,11 @@ Page({
     css: app.globalData.css,
     AD: app.globalData.AD,
     status:true,
+    location:"",
+    uname:"",
+    uphone:"",
+    lat:"",
+    lng:"",
     lists: [
       {
         id: 1,
@@ -23,27 +28,6 @@ Page({
         uphone: "15288653843",
         address: "云南省曲靖市麒麟区建宁东路880号",
         checked: true
-      },
-      {
-        id: 3,
-        uname: "邓恒静",
-        uphone: "15288653843",
-        address: "云南省曲靖市麒麟区建宁东路880号",
-        checked: false
-      },
-      {
-        id: 3,
-        uname: "邓恒静",
-        uphone: "15288653843",
-        address: "云南省曲靖市麒麟区建宁东路880号",
-        checked: false
-      },
-      {
-        id: 3,
-        uname: "邓恒静",
-        uphone: "15288653843",
-        address: "云南省曲靖市麒麟区建宁东路880号",
-        checked: false
       }
     ]
   },
@@ -92,7 +76,6 @@ Page({
         }
       }
     })
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -133,7 +116,72 @@ Page({
       status:status
     });
   },
+  /*
+    提交新地址请求
+  */
   postAddress:function(){
+    var uname=this.data.uname;
+    var location=this.data.location;
+    var uphone=this.data.uphone;
+    if(uname==null || uname=="" ){
+      wx.showModal({
+        title: "错误提示",
+        content: "请检查收货人姓名",
+        showCancel: false,
+        confirmText: "确定",
+      })
+      return;
+    } else if (uphone == null || uphone == "" || uphone.length<11) {
+      wx.showModal({
+        title: "错误提示",
+        content: "请检查收货人联系电话",
+        showCancel: false,
+        confirmText: "确定",
+      })
+      return;
+    } else if (location == null || location == "") {
+      wx.showModal({
+        title: "错误提示",
+        content: "请检查收货人地址",
+        showCancel: false,
+        confirmText: "确定",
+      })
+      return;
+    }
     this.newAddress();
+  },
+
+  /**
+   * 选择地址
+   */
+  chooseLocation: function () {
+    var that = this
+    wx.chooseLocation({
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          lng: res.longitude,//读取地址数据
+          lat: res.latitude,//读取地址数据
+          location: res.address
+        })
+      }
+    })
+  },
+  unameChange:function(e){
+    var _title = e.detail.value;
+    //通过正则表达式，仅能输入数字、英文、中文。
+    _title = _title.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g, '');
+    this.setData({
+      uname: _title
+    });
+  },
+  uphoneChange: function (e) {
+    var _title = e.detail.value;
+    //通过正则表达式，仅能输入数字。
+    _title = _title.replace(/[^\Z0-9]/g, '');
+    this.setData({
+      uphone: _title
+    });
   }
+
 })
