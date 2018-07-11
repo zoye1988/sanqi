@@ -123,6 +123,7 @@ Page({
     var uname=this.data.uname;
     var location=this.data.location;
     var uphone=this.data.uphone;
+    var lists=this.data.lists;
     if(uname==null || uname=="" ){
       wx.showModal({
         title: "错误提示",
@@ -148,6 +149,17 @@ Page({
       })
       return;
     }
+    var newAddress={
+      id: 3,
+      uname: uname,
+      uphone: uphone,
+      address: location,
+      checked: false
+    };
+    lists.push(newAddress);
+    this.setData({
+      lists:lists
+    });
     this.newAddress();
   },
 
