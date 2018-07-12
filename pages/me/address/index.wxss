@@ -23,6 +23,8 @@
 
 input {
   font-size: 10pt;
+  line-height: 25px;
+  height: 25px;
 }
 
 .page-title {
@@ -32,8 +34,8 @@ input {
 
 .page-desc {
   font-size: 10pt;
-  height: 45px;
-  line-height: 15px;
+  line-height: 30px;
+  height: 30px;
   border-bottom: 1px solid #efefef;
 }
 

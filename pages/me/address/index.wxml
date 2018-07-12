@@ -35,7 +35,7 @@
   <!--新建地址-->
   <view class="address-border2 {{css}}_border page-padding  {{status==false?'':'Hide'}}">
     <view class="page-body">
-      <view class="page-item item-100 page-left page-desc2" style='padding-bottom:5px;'>
+      <view class="page-item item-100 page-left page-desc2">
         新增地址
       </view>
     </view>
@@ -44,24 +44,24 @@
         <image src="../../img/uname.png" class="tip-small" style='border-right:1px solid #888;padding-right:10px;'></image>
       </view>
       <view class="page-item item-40 ">
-        <input type='text' placeholder="请输入收货人姓名" placeholder-style="color:#888" value="{{title}}" ></input>
+        <input type='text' placeholder="请输入收货人姓名" placeholder-style="color:#888" value="{{uname}}" bindinput='unameChange'></input>
       </view>
       <view class="page-item item-10 ">
         <image src="../../img/uphone.png" class="tip-small" style='border-right:1px solid #888;padding-right:10px;'></image>
       </view>
       <view class="page-item item-40 ">
-        <input type='text' placeholder="请输入联系电话" placeholder-style="color:#888" value="{{title}}" ></input>
+        <input type='text' placeholder="请输入联系电话" placeholder-style="color:#888" value="{{uphone}}" bindinput='uphoneChange'></input>
       </view>
     </view>
-    <view class="page-body page-center">
-      <view class="page-item item-10 page-desc2">
+    <view class="page-body page-center page-desc2">
+      <view class="page-item item-10">
         <image src="../../img/uaddress.png" class="tip-small" style='border-right:1px solid #888;padding-right:10px;'></image>
       </view>
-      <view class="page-item item-70 page-desc2">
-        <text>测试地址</text>
+      <view class="page-item item-70">
+        <text>{{location}}</text>
       </view>
-      <view class="page-item item-20 page-desc2">
-        <view class="delBtn" bindtap='delAddress'>获取地址</view>
+      <view class="page-item item-20">
+        <view class="delBtn" bindtap='chooseLocation' >获取地址</view>
       </view>
     </view>
     <view class="page-body">
