@@ -58,13 +58,4 @@
 
   </view>
 
-  <!--广告位-->
-  <view class="page-foot">
-    <image src='../../../img/logo.png' style="height:40px;width:40px;"></image>
-    <text>\n</text>
-    <image src='../../../img/logo2.png' style="height:20px;width:80px;"></image>
-    <text>\n</text>
-    <text style='color:#888;font-size:10pt;'>——————— 云南优润商贸有限公司 ———————</text>
-  </view>
-
 </view>

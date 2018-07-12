@@ -1,1 +1,50 @@
 /* pages/me/bill/list/index.wxss */
+.container{
+  margin-top:40px;
+  padding-top:5px;
+}
+.swiper-tabs{
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  font-size: 10pt;
+  font-family: "黑体";
+  vertical-align: middle;
+  border:1px solid #ededed;
+  height:40px;
+}
+.swiper{
+  display: inline-block;
+  width: 25%;
+  color: #777;
+  line-height: 40px;
+  height:40px;
+  border-width: 2px;
+}
+.bills{
+  width:95%;
+  margin:0 auto;
+}
+.bill{
+  height:135px;
+  margin-top:5px;
+  border:1px solid #cdcdcd;
+  background-color:#fff;
+  border-radius: 10px;
+  line-height: 30px;
+}
+.page-price{
+  font-size: 10pt;
+}
+.page-padding{
+  padding:10px;
+}
+.btn{
+  width:100%;
+  padding:1px 0px;
+  line-height: 20px;
+  margin-top:5px;
+  border:1px solid #ededed;
+  color:#fff;
+  border-radius: 5px;
+}

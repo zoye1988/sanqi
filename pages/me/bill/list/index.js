@@ -1,18 +1,22 @@
 // pages/me/bill/list/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    currentTab:0,
+    css: app.globalData.css,
+    AD: app.globalData.AD,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    app.setCssStyle();
   },
 
   /**
@@ -57,10 +61,8 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  /*
+  swichNav
+  */
   
-  }
 })
