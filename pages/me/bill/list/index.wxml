@@ -5,7 +5,7 @@
       <view>全 部</view>
     </view>
     <view class="swiper {{currentTab==1 ? css+'_borderBottom' : ''}}" data-current="1" bindtap="swichNav">
-      <view style='border-right:1px solid #ededed;border-left:1px solid #ededed;'>待结算</view>
+      <view style='border-right:1px solid #ededed;border-left:1px solid #ededed;'>待结算1</view>
     </view>
     <view class="swiper {{currentTab==1 ? css+'_borderBottom' : ''}}" data-current="2" bindtap="swichNav">
       <view style='border-right:1px solid #ededed;'>已下单</view>
