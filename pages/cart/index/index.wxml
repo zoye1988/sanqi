@@ -33,33 +33,19 @@
   <!--商品列表-->
   <view>
     <view class="page-body-border " wx:for="{{carts}}" wx:key="{{item.id}}">
-      <view class="page-item item-30 page-center ">
+      <view class="page-item item-40 page-center ">
         <image src='../../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
       </view>
-      <view class="page-item item-60 page-center">
+      <view class="page-item item-50 page-left">
         <view class="page-title ">{{item.title}}</view>
         <view class="page-desc">{{item.content}}</view>
-        <view class="page-grade">
-          <image src="../../img/selltip.png" class="tip-small2"></image>
-          <text>销售:</text>
-          <text class="page-grade-text">{{item.sale}}</text>
-          <text>|</text>
-          <image src="../../img/comment.png" class="tip-small2"></image>
-          <text>好评率:</text>
-          <text class="page-grade-text">{{item.comment}}</text>
-        </view>
-        <view class="page-ad page-left">
-          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
-          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
-          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
-        </view>
         <view class="price">
           <text class="yuan">¥</text>
           <text class="page-price">{{item.price}}</text>
           <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
           <text class="page-units">{{item.unit}}</text>
         </view>
-        <view>
+        <view >
           <view class="payment page-body {{css}}_border">
             <view class="page-item item-30 {{css}}_bgColor">
               +

@@ -5,7 +5,7 @@
       <view>全 部</view>
     </view>
     <view class="swiper {{currentTab==1 ? css+'_borderBottom' : ''}}" data-current="1" bindtap="swichNav">
-      <view style='border-right:1px solid #ededed;border-left:1px solid #ededed;'>待结算1</view>
+      <view style='border-right:1px solid #ededed;border-left:1px solid #ededed;'>待结算</view>
     </view>
     <view class="swiper {{currentTab==1 ? css+'_borderBottom' : ''}}" data-current="2" bindtap="swichNav">
       <view style='border-right:1px solid #ededed;'>已下单</view>
@@ -17,13 +17,12 @@
   <!--正文-->
   <view class="bills">
     <view class="bill page-padding">
-      <view class="page-body ">
-        <view class="page-item item-100" style='border-bottom:1px solid #efefef;'>
-          <text style='color:#888'>订单编号：</text>
-          CGT01023123123123
+      <view class="page-body">
+        <view class="page-item item-100" style='border-bottom:1px dashed black;'>
+          <text style='color:#888'>订单编号:</text> CGT01023123123123
         </view>
       </view>
-      <view class="page-body ">
+      <view class="page-body">
         <view class="page-item item-20">
           <text style='color:#888'>订单金额:</text>
         </view>
@@ -32,15 +31,16 @@
           <text class="page-price">450.00</text>
         </view>
       </view>
-      <view class="page-body ">
+      <view class="page-body">
         <view class="page-item item-20">
           <text style='color:#888'>订单时间:</text>
         </view>
         <view class="page-item item-80">
-          2018-02-03 09：09：21
+          2018-02-03 09:09:21
         </view>
       </view>
-      <view class="page-body" style='border-top:1px solid #efefef;'>
+
+      <view class="page-body">
         <view class="page-item item-20">
           <text style='color:#888'>订单状态:</text>
         </view>
@@ -53,18 +53,8 @@
           </view>
         </view>
       </view>
+
     </view>
 
-    <view class="bill">
-      <view class="page-body page-padding ">
-        <view class="page-item item-30">
-          订单金额
-        </view>
-        <view class="page-item item-70">
-          <text class="yuan">¥</text>
-          <text class="page-price">450.00</text>
-        </view>
-      </view>
-    </view>
   </view>
 </view>

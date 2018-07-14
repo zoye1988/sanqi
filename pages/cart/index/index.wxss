@@ -17,11 +17,11 @@
   line-height: 10px;
 }
 .payment{
-  height:25px;
-  line-height:25px;
+  height:20px;
+  line-height:20px;
   width:80%;
   color:#ffffff;
-  margin:0 auto;
+  margin-top:5px;
 }
 .payment view{
   text-align: center;
@@ -43,4 +43,8 @@
 }
 .page-body-border{
   width:97%;
+}
+.page-body-image{
+  width:95%;
+  height:90px;
 }

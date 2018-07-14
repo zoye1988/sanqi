@@ -17,7 +17,7 @@ Page({
         ad: 30,
         comment: 4.5,
         unit: "元/500g",
-        img: "hot.jpg",
+        img: "goods3.jpg",
         id: 1
       },
       {

@@ -26,18 +26,20 @@
   margin:0 auto;
 }
 .bill{
-  height:135px;
   margin-top:5px;
-  border:1px solid #cdcdcd;
+  border:1px solid black;
   background-color:#fff;
   border-radius: 10px;
-  line-height: 30px;
 }
 .page-price{
   font-size: 10pt;
 }
+.page-body{
+  height:30px;
+  line-height: 30px;
+}
 .page-padding{
-  padding:10px;
+  padding:5px 10px;
 }
 .btn{
   width:100%;
@@ -47,4 +49,5 @@
   border:1px solid #ededed;
   color:#fff;
   border-radius: 5px;
+  font-size: 9pt;
 }

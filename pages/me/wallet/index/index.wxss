@@ -4,7 +4,7 @@
 }
 .bonus{
   color:#ffffff;
-  height:164px;
+  height:165px;
 }
 .bonusBtn{
   width:80px;
