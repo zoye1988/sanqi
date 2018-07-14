@@ -28,7 +28,6 @@ Page({
         uphone: "15288653843",
         address: "云南省曲靖市麒麟区建宁东路880号",
         checked: true
-<<<<<<< HEAD
       },
       {
         id: 3,
@@ -36,8 +35,6 @@ Page({
         uphone: "15288653843",
         address: "云南省曲靖市麒麟区建宁东路880号",
         checked: false
-=======
->>>>>>> 56f657d63e03719532aee94266b789cae7514de9
       }
     ]
   },
