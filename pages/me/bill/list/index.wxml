@@ -16,13 +16,13 @@
   </view>
   <!--正文-->
   <view class="bills">
-    <view class="bill page-padding" wx:for="{{bills}}" wx:key="{{item.id}}" style="background-image:url('https://www.zhurendata.com/wxadmin/res/temp/{{item.status}}.png');background-repeat:no-repeat;background-position:top right">
+    <view  class="bill page-padding" wx:for="{{bills}}" wx:key="{{item.id}}" style="background-image:url('https://www.zhurendata.com/wxadmin/res/temp/{{item.status}}.png');background-repeat:no-repeat;background-position:top right">
       <view class="page-body">
-        <view class="page-item item-90" style='border-bottom:1px solid black;'>
+        <view class="page-item item-90">
           <text style='color:#888'>订单编号:</text> {{item.bcode}}
         </view>
         <view class="page-item item-10 page-center">
-          <image src="../../../img/del.png" class="{{item.status=='pay'?'':'Hide'}} tip"></image>
+          <image data-code='{{item.dcode}}' bindtap='delBill' src="../../../img/del.png" class="{{item.status=='pay'?'':'Hide'}} tip"></image>
         </view>
       </view>
       <view class="page-body">
@@ -54,13 +54,12 @@
           <text wx:if="{{item.status=='delay'}}">已签收</text>
         </view>
         <view class="page-item item-20 page-center">
-          <view class="btn {{css}}_bgColor">
+          <navigator class="btn {{css}}_bgColor" url="../detail/index">
             详细情况
-          </view>
+          </navigator>
         </view>
       </view>
 
     </view>
-
   </view>
 </view>

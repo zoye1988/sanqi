@@ -28,7 +28,7 @@
         </radio>
       </view>
       <view class="page-item item-20 page-center">
-        <view class="delBtn page-radius {{item.checked==true?'Hide':''}}" data-index='{{item.id}}' bindtap='delAddress'>删 除</view>
+        <image src="../../img/del.png" class="tip {{item.checked==true?'Hide':''}}" data-index='{{item.id}}' bindtap='delAddress'></image>
       </view>
     </view>
   </view>

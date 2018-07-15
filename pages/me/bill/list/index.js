@@ -48,6 +48,33 @@ Page({
     })
   },
 
+  delBill:function(e){
+    var that=this;
+    var dcode = e.currentTarget.dataset.dcode;
+    var bills=this.data.bills;
+    var _bills=[];
+    wx.showModal({
+      title: "操作提示",
+      content: "确定删除此订单?",
+      showCancel: true,
+      confirmText: "确定",
+      success: function (res) {
+        if (res.confirm) {
+          for (var bt in bills) {
+            if (dcode != bills[bt].dcode) {
+              _bills.push(bills[bt])
+            }
+          }
+          that.setData({
+            bills: _bills
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消');
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
