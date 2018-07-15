@@ -5,33 +5,36 @@
     <image src='../../res/{{news.cover}}' mode="aspectFill"></image>
   </view>
   <!--标题和卷首语-->
-  <view class="desc">
-    <view class="page-title">
-      <text>{{news.title}}</text>
+  <view class="news">
+    <view class="desc">
+      <view class="page-title">
+        <text>{{news.title}}</text>
+      </view>
+      <view class="page-desc">
+        <image src="../../img/eye.png" class="tip-small2"></image>
+        <text class="page-grade">300</text>
+      </view>
+      <!--正文-->
+      <view class="newsdesc">
+        {{news.desc}}
+      </view>
+      <view class="content" wx:for="{{news.content}}" wx:key="{{item.id}}">
+        {{item.words}}
+        <image src="../../res/{{item.img}}"></image>
+      </view>
     </view>
-    <view class="page-desc">
-      <image src="../../img/eye.png" class="tip-small2"></image>
-      <text class="page-grade">300</text>
-    </view>
-    <!--正文-->
-    <view class="newsdesc">
-      {{news.desc}}
-    </view>
-    <view class="content" wx:for="{{news.content}}" wx:key="{{item.id}}">
-      {{item.words}}
-      <image src="../../res/{{item.img}}"></image>
-    </view>
-  </view>
 
-  <view class="desc">
-    <view class="newsfoot">
-      <image src='../../img/tip.png' class="tip"></image>
-      <text wx:for="{{news.keywords}}" wx:for-item="keywords" wx:key="nid">{{keywords}}</text>
+    <view class="desc">
+      <view class="newsfoot">
+        <image src='../../img/tip.png' class="tip"></image>
+        <text wx:for="{{news.keywords}}" wx:for-item="keywords" wx:key="nid">{{keywords}}</text>
+      </view>
     </view>
-  </view>
 
+
+  </view>
   <!--产品关联-->
-  <view class="desc">
+  <view class="desc lists">
     <view class="page-body {{css}}_borderBottom">
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
@@ -67,6 +70,7 @@
       </view>
     </view>
   </view>
+
   <!--点赞-->
 
   <!--分享和客服热线-->
