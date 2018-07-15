@@ -57,8 +57,8 @@
           </view>
         </view>
       </view>
-      <view class="page-item item-10 right">
-        <image src='../../img/cancel.png'  mode="aspectFit" class="tip-large" bindtap='cancelCart' data-id='{{item.id}}'></image>
+      <view class="page-item item-10 page-center">
+        <image src='../../img/del.png'  mode="aspectFit" class="tip" bindtap='cancelCart' data-id='{{item.id}}'></image>
       </view>
     </view>
 
