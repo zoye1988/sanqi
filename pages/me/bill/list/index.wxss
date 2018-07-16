@@ -8,7 +8,6 @@
   text-align: center;
   background-color: #fff;
   font-size: 10pt;
-  font-family: "黑体";
   vertical-align: middle;
   border:1px solid #ededed;
   height:40px;
@@ -24,30 +23,35 @@
 .bills{
   width:95%;
   margin:0 auto;
+  
 }
 .bill{
   margin-top:5px;
   border:1px solid #cdcdcd;
   background-color:#fff;
   border-radius: 10px;
+  padding:10px 5px;
 }
 .page-price{
   font-size: 10pt;
 }
-.page-body{
-  height:30px;
-  line-height: 30px;
-}
-.page-padding{
-  padding:5px 10px;
-}
+  
 .btn{
   width:100%;
   padding:1px 0px;
   line-height: 20px;
-  margin-top:5px;
   border:1px solid #ededed;
   color:#fff;
-  border-radius: 5px;
+  border-radius: 9px;
   font-size: 9pt;
+}
+.right{
+  text-align: right;
+}
+.address{
+  border-radius: 10px;
+  border:1px solid #cdcdcd;
+  padding:10px;
+  margin:5px 0px;
+  background-color:#ffffff;
 }

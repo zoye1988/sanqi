@@ -16,18 +16,31 @@
   </view>
   <!--正文-->
   <view class="bills">
-    <view  class="bill page-padding" wx:for="{{bills}}" wx:key="{{item.id}}" style="background-image:url('https://www.zhurendata.com/wxadmin/res/temp/{{item.status}}.png');background-repeat:no-repeat;background-position:top right">
-      <view class="page-body">
-        <view class="page-item item-90">
-          <text style='color:#888'>订单编号:</text> {{item.bcode}}
+
+    <view class="address" wx:for="{{bills}}" wx:key="{{item.id}}" style="background-image:url('https://www.zhurendata.com/wxadmin/res/temp/{{item.status}}.png');background-repeat:no-repeat;background-position:top right">
+      <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
+        <view class="page-item item-80">
+          <image src="../../../img/ulist.png" class="tip" style='margin-right:5px;'></image>
+          <text wx:if="{{item.status=='pay'}}">待付款</text>
+          <text wx:if="{{item.status=='ready'}}">已下单</text>
+          <text wx:if="{{item.status=='receive'}}">已签收</text>
+          <text wx:if="{{item.status=='delay'}}">已签收</text>
         </view>
-        <view class="page-item item-10 page-center">
-          <image data-code='{{item.dcode}}' bindtap='delBill' src="../../../img/del.png" class="{{item.status=='pay'?'':'Hide'}} tip"></image>
+        <view class="page-item item-20 page-center">
+          <view class="btn {{css}}_bgColor">详细情况</view>
         </view>
       </view>
       <view class="page-body">
-        <view class="page-item item-20">
-          <text style='color:#888'>订单金额:</text>
+        <view class="page-item item-20 page-desc">
+          订单编号
+        </view>
+        <view class="page-item item-80">
+          {{item.bcode}}
+        </view>
+      </view>
+      <view class="page-body">
+        <view class="page-item item-20 page-desc">
+          订单金额
         </view>
         <view class="page-item item-80">
           <text class="yuan">¥</text>
@@ -35,31 +48,14 @@
         </view>
       </view>
       <view class="page-body">
-        <view class="page-item item-20">
-          <text style='color:#888'>订单时间:</text>
+        <view class="page-item item-20 page-desc">
+          订单时间
         </view>
         <view class="page-item item-80">
           {{item.time}}
         </view>
       </view>
-
-      <view class="page-body">
-        <view class="page-item item-20">
-          <text style='color:#888'>订单状态:</text>
-        </view>
-        <view class="page-item item-60 {{css}}_fontColor">
-          <text wx:if="{{item.status=='pay'}}">待付款</text>
-          <text wx:if="{{item.status=='ready'}}">已下单</text>
-          <text wx:if="{{item.status=='receive'}}">已签收</text>
-          <text wx:if="{{item.status=='delay'}}">已签收</text>
-        </view>
-        <view class="page-item item-20 page-center">
-          <navigator class="btn {{css}}_bgColor" url="../detail/index">
-            详细情况
-          </navigator>
-        </view>
-      </view>
-
+      
     </view>
   </view>
 </view>

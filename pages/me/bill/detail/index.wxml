@@ -1,2 +1,84 @@
 <!--pages/me/bill/detail/index.wxml-->
-<text>pages/me/bill/detail/index.wxml</text>
+<view class="container">
+  <!--订单成功-->
+  <view class="bill">
+    <image src="../../../img/success.png" class="tip-huge"></image>
+    <view>您的订单支付成功</view>
+  </view>
+  <!--收货地址-->
+  <view class="address">
+    <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
+      <view class="page-item item-70">
+        <image src="../../../img/pos.png" class="tip"></image>
+        我的地址
+      </view>
+      <view class="page-item item-30 right">
+        <view class="btn {{css}}_bgColor">更换地址</view>
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        收货人
+      </view>
+      <view class="page-item item-80 right">
+        邓恒静
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        联系电话
+      </view>
+      <view class="page-item item-80 right">
+        15288653843
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        收货地址
+      </view>
+      <view class="page-item item-80 right">
+        云南省曲靖市麒麟区建宁东路880号
+      </view>
+    </view>
+  </view>
+  <!--购物清单-->
+  <view class="address">
+    <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
+      <view class="page-item item-70">
+        <image src="../../../img/cartb.png" class="tip"></image>
+        购物清单
+      </view>
+      <view class="page-item item-30 right">
+        <view class="btn {{css}}_bgColor">更换地址</view>
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        收货人
+      </view>
+      <view class="page-item item-80 right">
+        邓恒静
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        联系电话
+      </view>
+      <view class="page-item item-80 right">
+        15288653843
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        收货地址
+      </view>
+      <view class="page-item item-80 right">
+        云南省曲靖市麒麟区建宁东路880号
+      </view>
+    </view>
+  </view>
+  <!--订单支付情况-->
+
+  <!--物流情况-->
+
+</view>
