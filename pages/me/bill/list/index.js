@@ -15,28 +15,28 @@ Page({
         bcode: "CGT011023123",
         price: 450.00,
         time: "2018-01-02",
-        status: "pay",
+        status: "pays",
       },
       {
         bid: 2,
         bcode: "CGT011023123",
         price: 450.00,
         time: "2018-01-02",
-        status: "ready",
+        status: "readys",
       },
       {
         bid: 3,
         bcode: "CGT011023123",
         price: 450.00,
         time: "2018-01-02",
-        status: "receive",
+        status: "receives",
       },
       {
         bid: 4,
         bcode: "CGT011023123",
         price: 450.00,
         time: "2018-01-02",
-        status: "delay",
+        status: "delays",
       }
     ]
   },

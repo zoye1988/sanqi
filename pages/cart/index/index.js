@@ -8,6 +8,7 @@ Page({
   data: {
     css: app.globalData.css,
     AD: app.globalData.AD,
+    showMsg:true,
     carts: [
       {
         title: "纯正文山30头三七",

@@ -29,3 +29,10 @@
 .tip-huge{
   width:65px;
 }
+.tip-large{
+  border:1px solid #efefef;
+}
+.page-price{
+  font-size: 10pt;
+  line-height: 40px;
+}

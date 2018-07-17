@@ -5,9 +5,21 @@
 .container{
   margin-top:45px;
 }
+.container2{
+  margin-top:70px;
+}
 .tabTop{
   height:45px;
   background-color:#ffffff;
+}
+.news{
+  height:25px;
+  top:45px;
+  font-size: 10pt;
+  background-color:#f4929c;
+  color:#ffffff;
+  line-height: 25px;
+  opacity: 0.9;
 }
 .cartbtn{
   line-height: 45px;

@@ -1,5 +1,5 @@
 <!--pages/list/index/index.wxml-->
-<view class="container">
+<view class="{{showMsg==true?'container2':'container'}}">
 
   <!--检索功能-->
   <view class="page-body tabTop" style='border-bottom:1px solid #cdcdcd;'>
@@ -22,6 +22,18 @@
       <text style='color:#ffffff;'>前往结算</text>
     </view>
   </view>
+  <!--检索功能-->
+  <view class="tabTop news page-body">
+    <view class="page-item item-10 page-center">
+      <image src="../../img/msgw.png" class="tip-small"></image>
+    </view>
+    <view class="page-item item-80 page-left">
+      还差200元可以减100元！
+    </view>
+    <view class="page-item item-10 page-center">
+      X
+    </view>
+  </view>
   
 
   <!--活动标语
@@ -38,7 +50,12 @@
       </view>
       <view class="page-item item-50 page-left">
         <view class="page-title ">{{item.title}}</view>
-        <view class="page-desc">{{item.content}}</view>
+        <view class="page-desc {{item.ad==1 ? '' : 'Hide'}}">{{item.content}}</view>
+        <view class="page-ad page-left">
+          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
+          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
+          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+        </view>
         <view class="price">
           <text class="yuan">¥</text>
           <text class="page-price">{{item.price}}</text>

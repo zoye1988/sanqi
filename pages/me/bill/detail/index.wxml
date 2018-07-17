@@ -44,17 +44,159 @@
   <!--购物清单-->
   <view class="address">
     <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
-      <view class="page-item item-70">
+      <view class="page-item item-40">
         <image src="../../../img/cartb.png" class="tip"></image>
         购物清单
       </view>
+      <view class="page-item item-60 right">
+        合计
+        <text style="margin-left:2px;margin-right:2px;color:#fc5b40">¥950.50</text>
+        |
+        <text style="margin-left:2px;margin-right:2px;color:#fc5b40">3</text>件商品
+      </view>
+    </view>
+    <view class="page-body" style='border-bottom:1px dashed #efefef;'>
+      <view class="page-item item-20 ">
+        <image src="../../../res/goods.png" class="tip-large"></image>
+      </view>
+      <view class="page-item item-50">
+        <text>文山正宗三七粉（30头）</text>
+        <text class="page-desc">\n规格：500g/罐</text>
+      </view>
+      <view class="page-item item-20 ">
+        <text class="yuan">¥</text>
+        <text class="page-price">300.00</text>
+      </view>
+      <view class="page-item item-10 " style='line-height:40px;'>
+        x 1
+      </view>
+    </view>
+    <view class="page-body" style='border-bottom:1px dashed #efefef;'>
+      <view class="page-item item-20 ">
+        <image src="../../../res/goods.png" class="tip-large"></image>
+      </view>
+      <view class="page-item item-50">
+        <text>文山正宗三七粉（30头）</text>
+        <text class="page-desc">\n规格：500g/罐</text>
+      </view>
+      <view class="page-item item-20 ">
+        <text class="yuan">¥</text>
+        <text class="page-price">300.00</text>
+      </view>
+      <view class="page-item item-10 " style='line-height:40px;'>
+        x 1
+      </view>
+    </view>
+    <view class="page-body" style='border-bottom:1px dashed #efefef;'>
+      <view class="page-item item-20 ">
+        <image src="../../../res/goods.png" class="tip-large"></image>
+      </view>
+      <view class="page-item item-50">
+        <text>文山正宗三七粉（30头）</text>
+        <text class="page-desc">\n规格：500g/罐</text>
+      </view>
+      <view class="page-item item-20 ">
+        <text class="yuan">¥</text>
+        <text class="page-price">300.00</text>
+      </view>
+      <view class="page-item item-10 " style='line-height:40px;'>
+        x 1
+      </view>
+    </view>
+  </view>
+  <!--订单支付情况-->
+  <view class="address">
+    <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
+      <view class="page-item item-70">
+        <image src="../../../img/news.png" class="tip"></image>
+        订单情况
+      </view>
       <view class="page-item item-30 right">
-        <view class="btn {{css}}_bgColor">更换地址</view>
+      | 未支付
       </view>
     </view>
     <view class="page-body">
       <view class="page-item item-20 page-desc">
-        收货人
+        订单编号
+      </view>
+      <view class="page-item item-80 right">
+        CGT2018021600326
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        订单时间
+      </view>
+      <view class="page-item item-80 right">
+        2018-06-25 08:35:56
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        支付时间
+      </view>
+      <view class="page-item item-80 right">
+        2018-06-23 05:56:15
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-40 page-desc">
+        订单价格
+      </view>
+      <view class="page-item item-40 page-left">
+        未优惠打折
+      </view>
+      <view class="page-item item-20 page-left">
+        ¥ 950.50
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-40 page-desc">
+        快递费用
+      </view>
+      <view class="page-item item-40 page-left">
+        满600元包邮
+      </view>
+      <view class="page-item item-20 page-left">
+        ¥ 0.00
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-40 page-desc">
+        优惠活动
+      </view>
+      <view class="page-item item-40 page-left">
+        满600元减100元
+      </view>
+      <view class="page-item item-20 page-left">
+        ¥ -100.00
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-80 page-desc">
+        结算金额
+      </view>
+      <view class="page-item item-20 page-left" style='color:#fc5b40'>
+        ¥ 560.00
+      </view>
+    </view>
+    
+    
+  </view>
+  <!--物流情况-->
+  <view class="address">
+    <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
+      <view class="page-item item-70">
+        <image src="../../../img/poster.png" class="tip"></image>
+        物流情况
+      </view>
+      <view class="page-item item-30 right">
+        484356548131
+      </view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-desc">
+        <image src="../../../img/point.png" class="tip"></image>
       </view>
       <view class="page-item item-80 right">
         邓恒静
@@ -62,23 +204,21 @@
     </view>
     <view class="page-body">
       <view class="page-item item-20 page-desc">
-        联系电话
+        <image src="../../../img/point.png" class="tip"></image>
       </view>
       <view class="page-item item-80 right">
-        15288653843
+        邓恒静
       </view>
     </view>
     <view class="page-body">
       <view class="page-item item-20 page-desc">
-        收货地址
+        <text>2018-02-03</text>
+        <text>\n09:01:01</text>
       </view>
       <view class="page-item item-80 right">
-        云南省曲靖市麒麟区建宁东路880号
+        邓恒静
       </view>
     </view>
   </view>
-  <!--订单支付情况-->
-
-  <!--物流情况-->
 
 </view>

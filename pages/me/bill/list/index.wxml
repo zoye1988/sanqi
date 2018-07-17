@@ -17,18 +17,18 @@
   <!--正文-->
   <view class="bills">
 
-    <view class="address" wx:for="{{bills}}" wx:key="{{item.id}}" style="background-image:url('https://www.zhurendata.com/wxadmin/res/temp/{{item.status}}.png');background-repeat:no-repeat;background-position:top right">
+    <view class="address" wx:for="{{bills}}" wx:key="{{item.id}}" style="background-image:url('https://www.zhurendata.com/wxadmin/res/temp/{{item.status}}.png');background-repeat:no-repeat;background-position:bottom right">
       <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
         <view class="page-item item-80">
           <image src="../../../img/ulist.png" class="tip" style='margin-right:5px;'></image>
-          <text wx:if="{{item.status=='pay'}}">待付款</text>
-          <text wx:if="{{item.status=='ready'}}">已下单</text>
-          <text wx:if="{{item.status=='receive'}}">已签收</text>
-          <text wx:if="{{item.status=='delay'}}">已签收</text>
+          <text wx:if="{{item.status=='pays'}}">待付款</text>
+          <text wx:if="{{item.status=='readys'}}">已下单</text>
+          <text wx:if="{{item.status=='receives'}}">已签收</text>
+          <text wx:if="{{item.status=='delays'}}">已签收</text>
         </view>
-        <view class="page-item item-20 page-center">
+        <navigator class="page-item item-20 page-center" url="../detail/index">
           <view class="btn {{css}}_bgColor">详细情况</view>
-        </view>
+        </navigator>
       </view>
       <view class="page-body">
         <view class="page-item item-20 page-desc">
@@ -40,6 +40,14 @@
       </view>
       <view class="page-body">
         <view class="page-item item-20 page-desc">
+          订单时间
+        </view>
+        <view class="page-item item-80">
+          {{item.time}}
+        </view>
+      </view>
+      <view class="page-body">
+        <view class="page-item item-20 page-desc">
           订单金额
         </view>
         <view class="page-item item-80">
@@ -47,15 +55,6 @@
           <text class="page-price">{{item.price}}</text>
         </view>
       </view>
-      <view class="page-body">
-        <view class="page-item item-20 page-desc">
-          订单时间
-        </view>
-        <view class="page-item item-80">
-          {{item.time}}
-        </view>
-      </view>
-      
     </view>
   </view>
 </view>
