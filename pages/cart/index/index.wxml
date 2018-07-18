@@ -45,10 +45,10 @@
   <!--商品列表-->
   <view>
     <view class="page-body-border " wx:for="{{carts}}" wx:key="{{item.id}}">
-      <view class="page-item item-40 page-center ">
+      <view class="page-item item-30 page-center ">
         <image src='../../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
       </view>
-      <view class="page-item item-50 page-left">
+      <view class="page-item item-60 page-left">
         <view class="page-title ">{{item.title}}</view>
         <view class="page-desc {{item.ad==1 ? '' : 'Hide'}}">{{item.content}}</view>
         <view class="page-ad page-left">

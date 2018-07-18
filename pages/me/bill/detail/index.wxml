@@ -143,7 +143,7 @@
       <view class="page-item item-40 page-desc">
         订单价格
       </view>
-      <view class="page-item item-40 page-left">
+      <view class="page-item item-40 page-left page-desc">
         未优惠打折
       </view>
       <view class="page-item item-20 page-left">
@@ -154,7 +154,7 @@
       <view class="page-item item-40 page-desc">
         快递费用
       </view>
-      <view class="page-item item-40 page-left">
+      <view class="page-item item-40 page-left page-desc">
         满600元包邮
       </view>
       <view class="page-item item-20 page-left">
@@ -165,7 +165,7 @@
       <view class="page-item item-40 page-desc">
         优惠活动
       </view>
-      <view class="page-item item-40 page-left">
+      <view class="page-item item-40 page-left page-desc">
         满600元减100元
       </view>
       <view class="page-item item-20 page-left">
@@ -186,39 +186,39 @@
   <!--物流情况-->
   <view class="address">
     <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
-      <view class="page-item item-70">
+      <view class="page-item item-50">
         <image src="../../../img/poster.png" class="tip"></image>
         物流情况
       </view>
-      <view class="page-item item-30 right">
-        484356548131
+      <view class="page-item item-50 right">
+        申通物流：484356548131
       </view>
     </view>
     <view class="page-body">
-      <view class="page-item item-20 page-desc">
-        <image src="../../../img/point.png" class="tip"></image>
+      <view class="page-item item-20 page-center">
+        <view class="post-time">09:56:52</view>
+        <view class="post-date">2018-06-31</view>
       </view>
-      <view class="page-item item-80 right">
-        邓恒静
-      </view>
-    </view>
-    <view class="page-body">
-      <view class="page-item item-20 page-desc">
-        <image src="../../../img/point.png" class="tip"></image>
-      </view>
-      <view class="page-item item-80 right">
-        邓恒静
+      <view class="page-item item-80 page-left post-pos">
+         已发货
       </view>
     </view>
     <view class="page-body">
-      <view class="page-item item-20 page-desc">
-        <text>2018-02-03</text>
-        <text>\n09:01:01</text>
+      <view class="page-item item-20 page-center">
+        <view class="post-date">|</view>
       </view>
-      <view class="page-item item-80 right">
-        邓恒静
+      <view class="page-item item-80"></view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-center">
+        <view class="post-time">09:56</view>
+        <view class="post-date">2018-06-31</view>
+      </view>
+      <view class="page-item item-80 page-left post-pos">
+        【云南省文山市】发出
       </view>
     </view>
+
   </view>
 
 </view>
