@@ -1,1 +1,23 @@
 /* pages/me/servicer/customer/index.wxss */
+.container{
+  margin-top:25px;
+}
+.news{
+  height:25px;
+  top:0px;
+  font-size: 10pt;
+  background-color:#f4929c;
+  color:#ffffff;
+  line-height: 25px;
+  opacity: 0.9;
+}
+.msg{
+  width:100%;
+  line-height: 20px;
+  font-size: 10pt;
+}
+.msg image{
+  border-radius: 20px;
+  margin:5px;
+  border:1px solid #cdcdcd;
+}

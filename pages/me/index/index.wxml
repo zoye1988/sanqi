@@ -97,7 +97,7 @@
           </view>
         </view>
       </navigator>
-      <view class="page-item item-50 ">
+      <navigator class="page-item item-50 " url="../servicer/{{user.role}}/index">
         <view class="meitem">
           <view class="cover">
             <image src='../../img/kefu2.png' mode='aspectFit'></image>
@@ -108,7 +108,7 @@
             <text>实时解答您在平台上遇到的所有问题</text>
           </view>
         </view>
-      </view>
+      </navigator>
     </view>
   </view>
 

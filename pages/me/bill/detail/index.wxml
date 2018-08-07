@@ -43,7 +43,7 @@
   </view>
   <!--购物清单-->
   <view class="address">
-    <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:10px;'>
+    <view class="page-body" style='border-bottom:1px solid #cdcdcd;margin-bottom:5px;'>
       <view class="page-item item-40">
         <image src="../../../img/cartb.png" class="tip"></image>
         购物清单
@@ -55,7 +55,7 @@
         <text style="margin-left:2px;margin-right:2px;color:#fc5b40">3</text>件商品
       </view>
     </view>
-    <view class="page-body" style='border-bottom:1px dashed #efefef;'>
+    <view class="page-body" style='border-bottom:1px dashed #efefef;padding-top:5px;'>
       <view class="page-item item-20 ">
         <image src="../../../res/goods.png" class="tip-large"></image>
       </view>
@@ -71,7 +71,7 @@
         x 1
       </view>
     </view>
-    <view class="page-body" style='border-bottom:1px dashed #efefef;'>
+    <view class="page-body" style='border-bottom:1px dashed #efefef;padding-top:5px;'>
       <view class="page-item item-20 ">
         <image src="../../../res/goods.png" class="tip-large"></image>
       </view>
@@ -87,7 +87,7 @@
         x 1
       </view>
     </view>
-    <view class="page-body" style='border-bottom:1px dashed #efefef;'>
+    <view class="page-body" style='border-bottom:1px dashed #efefef;padding-top:5px;'>
       <view class="page-item item-20 ">
         <image src="../../../res/goods.png" class="tip-large"></image>
       </view>
@@ -112,7 +112,7 @@
         订单情况
       </view>
       <view class="page-item item-30 right">
-      | 未支付
+       未支付
       </view>
     </view>
     <view class="page-body">
@@ -218,7 +218,24 @@
         【云南省文山市】发出
       </view>
     </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-center">
+        <view class="post-date">|</view>
+      </view>
+      <view class="page-item item-80"></view>
+    </view>
+    <view class="page-body">
+      <view class="page-item item-20 page-center">
+        <view class="post-time">09:56</view>
+        <view class="post-date">2018-06-31</view>
+      </view>
+      <view class="page-item item-80 page-left post-pos">
+        【云南省文山市】发出
+      </view>
+    </view>
 
   </view>
+
+  <button type="primary" >商品评价</button>
 
 </view>

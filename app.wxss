@@ -349,6 +349,46 @@
   text-align: center;
   z-index: 99999;
 }
+
+.page-customer{
+  width: 100%;
+  display:flow-root;
+}
+.page-seller{
+  width: 100%;
+  display:flow-root;
+}
+
+.page-customer image{
+  float:left;
+}
+.page-seller image{
+  float:right;
+}
+.page-customer text{
+  background-color:white;
+  border:1px solid #ededed;
+  border-radius: 9pt;
+  padding:10px;
+  width:60%;
+  float:left;
+  margin-top:5px;
+
+}
+.page-seller text{
+  line-height: 20px;
+  background-color:#06a506;
+  color:#ffffff;
+  border:1px solid #ededed;
+  border-radius: 9pt;
+  width:60%;
+  padding:10px;
+  float:right;
+  text-align: left;
+  margin-top:5px;
+}
+
+
 .page-right image{
   width:40px;
   height:40px;

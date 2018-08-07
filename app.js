@@ -14,6 +14,7 @@ App({
       uimg:"",
       openid:"",
       tel:"",
+      role:"customer"
     }
   },
   onShow:function(){

@@ -1,2 +1,29 @@
-<!--pages/me/servicer/customer/index.wxml-->
-<text>pages/me/servicer/customer/index.wxml</text>
+<view class="container">
+  <!--客服状态-->
+  <view class="tabTop news page-body">
+    <view class="page-item item-100 page-center">
+      <image src="../../../img/msgw.png" class="tip-small"></image>
+      稍后片刻，客服人员接入中
+    </view>
+  </view>
+  <!--客服信息列表-->
+  <view>
+    <view class="msg page-customer">
+        <image src="../../../res/head.jpg" class="tip-large"></image>
+        <text>您好，1002号客服为您服务</text>
+    </view>
+    <view class="msg page-seller">
+        <image src="../../../res/head.jpg" class="tip-large"></image>
+        <text>小白搬出泡脚桶，桶里有一只丝袜，丝袜长时间浸泡艾草变了色。小白拿出已用了半袋的艾草，抓一把塞进丝袜里，打结系好，放进桶里。正好水也烧开了，小白将滚开的水浇在丝袜上，丝袜里立刻流出褐色汁液。桶盖只有一半，无法密封，小白另用一条毛巾盖住，二十分钟后便可享受正宗的艾草足浴。</text>
+    </view>
+    <view class="msg page-customer">
+        <image src="../../../res/head.jpg" class="tip-large"></image>
+        <text>月20日晚间，中国银保监会就《商业银行理财业务监督管理办法(征求意见稿)》公开征求意见</text>
+    </view>
+    <view class="msg page-seller">
+        <image src="../../../res/head.jpg" class="tip-large"></image>
+        <text>您认为理财新规对股市是利好还是利空</text>
+    </view>
+  </view>
+  <!--输入栏-->
+</view>
