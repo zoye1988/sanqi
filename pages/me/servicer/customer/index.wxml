@@ -8,22 +8,71 @@
   </view>
   <!--客服信息列表-->
   <view>
-    <view class="msg page-customer">
+    <view class="page-body">
+      <view class="page-item item-100 chat-time">
+        <text>2018-02-11 08:45</text>
+      </view>
+    </view>
+
+    <view class="page-body msg">
+      <view class="page-item item-15">
         <image src="../../../res/head.jpg" class="tip-large"></image>
+      </view>
+      <view class="page-item item-70 page-customer">
         <text>您好，1002号客服为您服务</text>
+      </view>
+      <view class="page-item item-15"></view>
     </view>
-    <view class="msg page-seller">
-        <image src="../../../res/head.jpg" class="tip-large"></image>
-        <text>小白搬出泡脚桶，桶里有一只丝袜，丝袜长时间浸泡艾草变了色。小白拿出已用了半袋的艾草，抓一把塞进丝袜里，打结系好，放进桶里。正好水也烧开了，小白将滚开的水浇在丝袜上，丝袜里立刻流出褐色汁液。桶盖只有一半，无法密封，小白另用一条毛巾盖住，二十分钟后便可享受正宗的艾草足浴。</text>
+
+    <view class="page-body">
+      <view class="page-item item-100 chat-time">
+        <text>2018-02-11 08:45</text>
+      </view>
     </view>
-    <view class="msg page-customer">
-        <image src="../../../res/head.jpg" class="tip-large"></image>
+
+    <view class="page-body msg">
+      <view class="page-item item-15"></view>
+      <view class="page-item item-70 page-seller">
         <text>月20日晚间，中国银保监会就《商业银行理财业务监督管理办法(征求意见稿)》公开征求意见</text>
-    </view>
-    <view class="msg page-seller">
+      </view>
+      <view class="page-item item-15">
         <image src="../../../res/head.jpg" class="tip-large"></image>
-        <text>您认为理财新规对股市是利好还是利空</text>
+      </view>
+    </view>
+
+    <view class="page-body">
+      <view class="page-item item-100 chat-time">
+        <text>2018-02-11 08:45</text>
+      </view>
+    </view>
+
+    <view class="page-body msg">
+      <view class="page-item item-15">
+        <image src="../../../res/head.jpg" class="tip-large"></image>
+      </view>
+      <view class="page-item item-70 page-customer">
+        <text>您好，1002号客服为您服务</text>
+      </view>
+      <view class="page-item item-15"></view>
+    </view>
+
+    <view class="page-body">
+      <view class="page-item item-100 chat-time">
+        <text>2018-02-11 08:45</text>
+      </view>
+    </view>
+
+    <view class="page-body msg">
+      <view class="page-item item-15"></view>
+      <view class="page-item item-70 page-seller">
+        <text>月20日晚间，中国银保监会就《商业银行理财业务监督管理办法(征求意见稿)》公开征求意见</text>
+      </view>
+      <view class="page-item item-15">
+        <image src="../../../res/head.jpg" class="tip-large"></image>
+      </view>
     </view>
   </view>
+
   <!--输入栏-->
+
 </view>

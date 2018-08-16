@@ -352,11 +352,9 @@
 
 .page-customer{
   width: 100%;
-  display:flow-root;
 }
 .page-seller{
   width: 100%;
-  display:flow-root;
 }
 
 .page-customer image{
@@ -365,12 +363,24 @@
 .page-seller image{
   float:right;
 }
+
+.chat-time{
+  width:100%;
+  text-align: center;
+}
+.chat-time text{
+  line-height: 15px;
+  height:15px;
+  color:#888;
+  font-size: 9pt;
+}
+
 .page-customer text{
   background-color:white;
   border:1px solid #ededed;
   border-radius: 9pt;
   padding:10px;
-  width:60%;
+  width:80%;
   float:left;
   margin-top:5px;
 
@@ -381,7 +391,7 @@
   color:#ffffff;
   border:1px solid #ededed;
   border-radius: 9pt;
-  width:60%;
+  width:80%;
   padding:10px;
   float:right;
   text-align: left;
