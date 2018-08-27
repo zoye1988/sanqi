@@ -1,6 +1,7 @@
 /* pages/me/servicer/customer/index.wxss */
 .container{
   margin-top:25px;
+  background-color: #ffffff;
 }
 .news{
   height:25px;
@@ -30,13 +31,53 @@
   border:1px solid #cfcfcf;
   line-height: 40px;
   display:flex;
+  text-align: center;
 }
 .iptBtn{
   font-size: 10pt;
   line-height:30px;
   height:30px;
+  width:50px;
   border:1px solid #cfcfcf;
   border-radius: 3px;
   text-align: center;
-  margin-top:3px;
+  margin:0 auto;
+  margin-top:4px;
+}
+.ipt input {
+  line-height: 30px;
+  height: 30px;
+  margin-top:5px;
+  font-size: 10pt;
+  text-align: left;
+  border-bottom:1px solid #cfcfcf;
+}
+.res{
+  width:100%;
+  height:40px;
+  position: absolute;
+  left:0;
+  bottom:0;
+  border:1px solid #cfcfcf;
+  line-height: 40px;
+  display:flex;
+  text-align: center;
+}
+.iptShow{
+  width:100%;
+  position: absolute;
+  left:0;
+  bottom:160px;
+  border:1px solid #cfcfcf;
+  line-height: 40px;
+  height:40px;
+  display:flex;
+  text-align: center;
+}
+.iptShow input {
+  line-height: 40px;
+  height: 40px;
+  font-size: 10pt;
+  text-align: left;
+  border-bottom:1px solid #cfcfcf;
 }

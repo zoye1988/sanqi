@@ -7,79 +7,44 @@
     </view>
   </view>
   <!--客服信息列表-->
-  <view>
-    <view class="page-body">
-      <view class="page-item item-100 chat-time">
-        <text>2018-02-11 08:45</text>
+  <view class="">
+
+    <view wx:for="{{chats}}" wx:key="{{item.cid}}">
+      <view class="page-body">
+        <view class="page-item item-100 chat-time">
+          <text>{{item.dtime}}</text>
+        </view>
       </view>
+
+      <view class="page-body msg">
+        <view class="page-item item-15">
+          <image src="../../../res/{{item.head}}" class="tip-large {{item.role=='seller'?'':'Hide'}}"></image>
+        </view>
+        <view class="page-item item-70 page-{{item.role}}">
+          <text>{{item.content}}</text>
+        </view>
+        <view class="page-item item-15">
+          <image src="../../../res/{{item.head}}" class="tip-large {{item.role=='customer'?'':'Hide'}}"></image>
+        </view>
+      </view>
+
     </view>
 
-    <view class="page-body msg">
-      <view class="page-item item-15">
-        <image src="../../../res/head.jpg" class="tip-large"></image>
-      </view>
-      <view class="page-item item-70 page-customer">
-        <text>您好，1002号客服为您服务</text>
-      </view>
-      <view class="page-item item-15"></view>
-    </view>
 
-    <view class="page-body">
-      <view class="page-item item-100 chat-time">
-        <text>2018-02-11 08:45</text>
-      </view>
-    </view>
 
-    <view class="page-body msg">
-      <view class="page-item item-15"></view>
-      <view class="page-item item-70 page-seller">
-        <text>月20日晚间，中国银保监会就《商业银行理财业务监督管理办法(征求意见稿)》公开征求意见</text>
-      </view>
-      <view class="page-item item-15">
-        <image src="../../../res/head.jpg" class="tip-large"></image>
-      </view>
-    </view>
 
-    <view class="page-body">
-      <view class="page-item item-100 chat-time">
-        <text>2018-02-11 08:45</text>
-      </view>
-    </view>
-
-    <view class="page-body msg">
-      <view class="page-item item-15">
-        <image src="../../../res/head.jpg" class="tip-large"></image>
-      </view>
-      <view class="page-item item-70 page-customer">
-        <text>您好，1002号客服为您服务</text>
-      </view>
-      <view class="page-item item-15"></view>
-    </view>
-
-    <view class="page-body">
-      <view class="page-item item-100 chat-time">
-        <text>2018-02-11 08:45</text>
-      </view>
-    </view>
-
-    <view class="page-body msg">
-      <view class="page-item item-15"></view>
-      <view class="page-item item-70 page-seller">
-        <text>月20日晚间，中国银保监会就《商业银行理财业务监督管理办法(征求意见稿)》公开征求意见</text>
-      </view>
-      <view class="page-item item-15">
-        <image src="../../../res/head.jpg" class="tip-large"></image>
-      </view>
-    </view>
   </view>
 
   <!--输入栏-->
-  <view class="ipt">
-    <view class="item-80">
-      <input type='text'></input>
+  <view class=" ipt">
+    <view class="item-15">
+      <image src="../../../img/res.png" class="tip-big" bindtap='resBtn'></image>
     </view>
-    <view class="item-15 text-left">
-      <view class="iptBtn">
+    <view class="item-65">
+      <input type='text' placeholder='请输入内容' value="{{words}}" bindinput="WordsChange"></input>
+    </view>
+    <view class="item-20">
+      <view class="iptBtn" bindtap='sendWords'>
         发送
       </view>
     </view>
