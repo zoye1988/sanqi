@@ -74,5 +74,15 @@
   </view>
 
   <!--输入栏-->
+  <view class="ipt">
+    <view class="item-80">
+      <input type='text'></input>
+    </view>
+    <view class="item-15 text-left">
+      <view class="iptBtn">
+        发送
+      </view>
+    </view>
+  </view>
 
 </view>

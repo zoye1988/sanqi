@@ -21,3 +21,22 @@
   margin:5px;
   border:1px solid #cdcdcd;
 }
+.ipt{
+  width:100%;
+  height:40px;
+  position: absolute;
+  left:0;
+  bottom:0;
+  border:1px solid #cfcfcf;
+  line-height: 40px;
+  display:flex;
+}
+.iptBtn{
+  font-size: 10pt;
+  line-height:30px;
+  height:30px;
+  border:1px solid #cfcfcf;
+  border-radius: 3px;
+  text-align: center;
+  margin-top:3px;
+}
