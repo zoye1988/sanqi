@@ -93,5 +93,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  toChat:function(){
+    wx.navigateTo({
+      url: '../../me/servicer/customer/index',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
 })

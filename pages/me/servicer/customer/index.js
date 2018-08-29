@@ -78,7 +78,8 @@ Page({
     }
     _chats.push(chat);
     this.setData({
-      chats:_chats
+      chats:_chats,
+      words:""
     })
   }
 })

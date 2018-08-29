@@ -75,7 +75,7 @@
 
   <!--分享和客服热线-->
   <view class="page-right">
-    <image src="../../img/kefu.gif" style='width:80px;height:80px;margin-bottom:0'>
+    <image src="../../img/kefu.gif" style='width:80px;height:80px;margin-bottom:0' bindtap='toChat'>
     </image>
     <image src="../../img/wx.png"></image>
     <text>\n</text>

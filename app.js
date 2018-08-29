@@ -4,7 +4,7 @@ App({
     
   },
   globalData: {
-    userInfo: null,
+    ustatus: null,
     css:"moon",
     AD:true,     //广告位
     ad_package:"满200包邮",
@@ -14,8 +14,9 @@ App({
       uimg:"",
       openid:"",
       tel:"",
-      role:"customer"
+      role:"customer",
     }
+
   },
   onShow:function(){
     this.setCssStyle();
@@ -23,9 +24,16 @@ App({
 
   //登录时，全局读取用户信息
   onLaunch:function(){
-    var userInfo = this.globalData.userInfo;
-    if (userInfo==null){
+    var ustatus = wx.getStorageSync("ustatus");
+    console.log("ustatus="+ustatus);
+    if (ustatus==null || ustatus==""){
       this.getLogin();
+    }else{
+      this.globalData.user.openid = wx.getStorageSync("user.openid");
+      this.globalData.user.uname = wx.getStorageSync("user.uname");
+      this.globalData.user.uimg = wx.getStorageSync("user.uimg");
+      this.globalData.user.tel = wx.getStorageSync("user.tel");
+      this.globalData.user.role = wx.getStorageSync("user.role");
     }
   },
   /***
@@ -39,6 +47,11 @@ App({
         that.globalData.user.uname= userInfo.nickName;
         that.globalData.user.uimg= userInfo.avatarUrl;
         that.globalData.user.tel="15288653843";
+        wx.setStorageSync("user.uname", that.globalData.user.uname);
+        wx.setStorageSync("user.uimg", that.globalData.user.uimg);
+        wx.setStorageSync("user.tel", that.globalData.user.tel);
+        wx.setStorageSync("user.role", "customer");
+        wx.setStorageSync("ustatus", "pass");
       }
     });
   },
