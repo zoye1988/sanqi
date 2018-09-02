@@ -3,14 +3,16 @@
   <!--个人信息-->
   <view class="metitle {{css}}_bg page-body">
     <view class="page-item">
-      <image src='{{user.uimg}}'></image>
+      <view class="headImage">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
     </view>
     <view class="page-item item-70">
       <view class="title">
-        {{user.uname}}
+        <open-data type="userNickName"></open-data>
       </view>
       <view class="phone">
-        <image src='../../img/Phone.png'></image>
+        <image src='../../img/role.png'></image>
         {{user.tel}}
       </view>
     </view>

@@ -2,7 +2,7 @@
 <view class="container">
 
   <!--活动标语-->
-  <view class="page-tab {{AD ? '' : 'Hide'}}">
+  <view class="page-tab {{AD==1 ? '' : 'Hide'}}">
     <image class="page-tab-img" mode="aspectFill" src='../img/ad/{{css}}_ad.png'></image>
   </view>
 
@@ -18,7 +18,7 @@
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
       <view class="page-item item-90 page-font-weight">
-        热门产品
+        热门产品{{css}}
       </view>
       <view class="page-item item-7">
         <image src="../img/more.png" class="tip" />
