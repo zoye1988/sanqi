@@ -36,7 +36,7 @@ App({
   //登录时，全局读取用户信息
   onLaunch:function(){
     console.log("onLaunch");
-    this.getCssStyle();
+    //this.getCssStyle();
   },
   /***
    * 获取用户信息 
