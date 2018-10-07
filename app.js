@@ -21,8 +21,8 @@ App({
     /**
      * 系统默认参数
      */
-    downloadurl: 'http://192.168.3.69:8080/wxadmin/res/',//默认系统下载链接
-    host: "http://192.168.3.69:8080/wxadmin/",//默认系统数据访问地址
+    downloadurl: 'http://192.168.3.71:8080/wxadmin/res/',//默认系统下载链接
+    host: "http://192.168.3.71:8080/wxadmin/",//默认系统数据访问地址
     //downloadurl: 'http://192.168.31.194:8080/wxadmin/res/',//默认系统下载链接
     //host: "http://192.168.31.194:8080/wxadmin/",//默认系统数据访问地址
 
@@ -36,7 +36,7 @@ App({
   //登录时，全局读取用户信息
   onLaunch:function(){
     console.log("onLaunch");
-    //this.getCssStyle();
+    this.getCssStyle();
   },
   /***
    * 获取用户信息 

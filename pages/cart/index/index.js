@@ -73,7 +73,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    app.setCssStyle();
+    this.setData({
+      css: app.globalData.css,
+      AD: app.globalData.AD
+    });
+    //app.setCssStyle();
   },
 
   /**

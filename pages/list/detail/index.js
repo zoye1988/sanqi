@@ -61,7 +61,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
+    this.setData({
+      css: app.globalData.css,
+      AD: app.globalData.AD
+    });
     app.setCssStyle();
     //将navrigaterBar名称修改
     wx.setNavigationBarTitle({

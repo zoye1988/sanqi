@@ -23,6 +23,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    this.setData({
+      css: app.globalData.css,
+      AD: app.globalData.AD
+    });
     app.setCssStyle();
   },
 

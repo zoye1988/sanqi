@@ -18,7 +18,7 @@
       <view class="page-item item-3 {{css}}_titleColor">
       </view>
       <view class="page-item item-90 page-font-weight">
-        热门产品{{css}}
+        热门产品
       </view>
       <view class="page-item item-7">
         <image src="../img/more.png" class="tip" />
