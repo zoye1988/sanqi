@@ -91,5 +91,6 @@ Page({
       AD: app.globalData.AD
     });
     app.setCssStyle();
+    //读取热门商品
   },
 })
