@@ -18,14 +18,14 @@
           {{item.title}}
           <view>
             <image src="../../img/eye.png" class="tip-small2"></image>
-            <text class="page-grade">300</text>
+            <text class="page-grade">{{item.viewer}}</text>
             <text class="page-grade"> | </text>
             <image src="../../img/good.png" class="tip-small2"></image>
-            <text class="page-grade">20</text>
+            <text class="page-grade">{{item.love}}</text>
           </view>
         </view>
       </view>
-      <image class="newsimg" src="../../res/{{item.img}}" mode="center"></image>
+      <image class="newsimg" src="../../res/{{item.cover}}" mode="center"></image>
       <view class='newsfoot'>
         <view>
           <image src='../../img/tip.png' class="tip"></image>

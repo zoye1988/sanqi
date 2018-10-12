@@ -500,6 +500,18 @@
   border-bottom:1px solid #cdcdcd;
   margin-bottom:5px;
 }
+.empty_item{
+  font-size:10pt;
+  text-align: center;
+  color:#888;
+  position: absolute;
+  top:40%;
+  left:40%;
+}
+.empty_item image{
+  width:40px;
+  height:40px;
+}
 
 /*
 * 正常css

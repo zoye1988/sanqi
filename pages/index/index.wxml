@@ -25,12 +25,12 @@
       </view>
     </view>
     <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{hots}}" wx:key="{{item.id}}">
+      <block wx:for="{{hots}}" wx:key="{{item.gid}}">
         <swiper-item>
-          <navigator class="page-body page-padding" url="../list/detail/index?nid=1">
+          <navigator class="page-body page-padding" url="../list/detail/index?gid={{item.gid}}">
             <view class="page-item item-60 page-center">
               <view class="page-title">{{item.title}}</view>
-              <view class="page-content">{{item.content}}</view>
+              <view class="page-content">{{item.brief}}</view>
               <view class="page-center">
                 <view class="page-ad">
                   <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
@@ -40,14 +40,14 @@
                 <view class="price">
                   <text class="yuan">¥</text>
                   <text class="page-price">{{item.price}}</text>
-                  <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
-                  <text class='page-units'>{{item.unit}}</text>
+                  <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
+                  <text class='page-units'>{{item.tp}}</text>
                 </view>
               </view>
               <view class="page-radius {{css}}_bgColor">立即选购</view>
             </view>
             <view class="page-item item-40 page-center">
-              <image src='../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
+              <image src='../res/{{item.headimg}}' mode="aspectFit" class="page-body-image"></image>
             </view>
           </navigator>
         </swiper-item>
@@ -67,67 +67,63 @@
     </view>
 
 
-    <view wx:for="{{plans}}" wx:key="{{item.id}}">
-      <view class="page-body-mid page-padding" wx:if="{{index==0}}">
+    <view wx:for="{{plans}}" wx:key="{{item.gid}}">
+      <navigator url="../list/detail/index?gid={{item.gid}}" class="page-body-mid page-padding" wx:if="{{index==0}}">
         <view class="page-item item-40 page-center">
-          <image src='../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
+          <image src='../res/{{item.headimg}}' mode="aspectFit" class="page-body-image"></image>
         </view>
         <view class="page-item item-60">
           <view class="page-title page-center">{{item.title}}</view>
-          <view class="page-desc">{{item.content}}</view>
+          <view class="page-desc">{{item.brief}}</view>
           <view class="page-grade">
             <image src="../img/selltip.png" class="tip-small2"></image>
             <text>销售:</text>
-            <text class="page-grade-text">{{item.sale}}</text>
+            <text class="page-grade-text">{{item.sellcount}}</text>
             <text>|</text>
             <image src="../img/comment.png" class="tip-small2"></image>
             <text>好评率:</text>
-            <text class="page-grade-text">{{item.comment}}</text>
+            <text class="page-grade-text">{{item.commentcount}}</text>
           </view>
           <view class="page-ad">
-            <text class="{{item.ad%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
-          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
-          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+            <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+          <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
           </view>
           <view class="price">
             <text class="yuan">¥</text>
             <text class="page-price">{{item.price}}</text>
-            <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
-          <text class="page-units">{{item.unit}}</text>
+            <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
+          <text class="page-units">{{item.tp}}</text>
           </view>
         </view>
-      </view>
-      <view class="page-body-ad" wx:if="{{index!=0}}">
+      </navigator>
+      <navigator url="../list/detail/index?gid={{item.gid}}" class="page-body-ad" wx:if="{{index!=0}}">
         <view class="page-item item-30 page-center">
-          <image src='../res/{{item.img}}' mode="aspectFit" class="page-body-image2"></image>
+          <image src='../res/{{item.headimg}}' mode="aspectFit" class="page-body-image2"></image>
         </view>
         <view class="page-item item-70 page-border-left">
           <view class="_page-title">{{item.title}}</view>
           <view class="page-grade">
             <image src="../img/selltip.png" class="tip-small2"></image>
-            <text>销售:{{item.sale}}</text>
+            <text>销售:{{item.sellcount}}</text>
             <text>|</text>
             <image src="../img/comment.png" class="tip-small2"></image>
-            <text>好评率:{{item.comment}}</text>
+            <text>好评率:{{item.commentcount}}</text>
           </view>
           <view class="page-ad">
-            <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
-            <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
-            <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+            <text class="{{item.plan%5==0 ? '' : 'Hide'}}">满600减100</text>
+            <text class="{{item.plan%3==0 ? '' : 'Hide'}}">满200包邮</text>
+            <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
           </view>
           <view class="price">
             <text class="yuan">¥</text>
             <text class="page-price">{{item.price}}</text>
-            <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
-          <text class="page-units">{{item.unit}}</text>
+            <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
+          <text class="page-units">{{item.tp}}</text>
           </view>
         </view>
-      </view>
+      </navigator>
     </view>
-
-
-
-
   </view>
 
 

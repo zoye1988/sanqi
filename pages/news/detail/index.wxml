@@ -13,6 +13,9 @@
       <view class="page-desc">
         <image src="../../img/eye.png" class="tip-small2"></image>
         <text class="page-grade">300</text>
+        <text> | </text>
+        <image src="../../img/good.png" class="tip-small2"></image>
+        <text class="page-grade">300</text>
       </view>
       <!--正文-->
       <view class="newsdesc">

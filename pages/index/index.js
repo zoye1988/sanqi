@@ -13,84 +13,73 @@ Page({
     AD: app.globalData.AD,
     ad_package: app.globalData.ad_package,
     ad_minus: app.globalData.ad_minus,
-    hots: [
-      {
-        title: "纯正文山30头三七",
-        content: "产品选用文山本地种植三七，无添加无公害，现磨打粉",
-        price: 260,
-        sale: 120,
-        plan: 30,
-        unit: "元/500g",
-        img: "hot.jpg",
-        id: 1
-      },
-      {
-        title: "血栓通片（250毫克）",
-        content: "产品选用文山本地种植三七，无添加无公害，现磨打粉",
-        price: 800,
-        sale: 600,
-        plan: 10,
-        unit: "20片/盒",
-        img: "goods.png",
-        id: 2
-      },
-      {
-        title: "三七牙膏",
-        content: "产品选用文山本地种植三七，无添加无公害，现磨打粉",
-        price: 20,
-        sale: 0,
-        plan: 3,
-        unit: "100g/盒",
-        img: "goods2.png",
-        id: 3
-      },
-    ],
-    plans: [
-      {
-        title: "纯正文山30头三七",
-        content: "产品选用文山本地种植三七，无添加无公害，现磨打粉",
-        price: 260,
-        sale: 120,
-        ad: 30,
-        comment:4.5,
-        unit: "元/500g",
-        img: "hot.jpg",
-        id: 1
-      },
-      {
-        title: "血栓通片（250毫克）",
-        content: "产品选用文山本地种植三七，无添加无公害，现磨打粉",
-        price: 800,
-        sale: 600,
-        ad: 10,
-        comment: 4.5,
-        unit: "20片/盒",
-        img: "goods.png",
-        id: 2
-      },
-      {
-        title: "三七牙膏",
-        content: "产品选用文山本地种植三七，无添加无公害，现磨打粉",
-        price: 20,
-        sale: 0,
-        ad: 3,
-        comment: 4.5,
-        unit: "100g/盒",
-        img: "goods2.png",
-        id: 3
-      },
-    ],
+    hots: [],
+    plans:[]
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+    var host=app.globalData.host;
     this.setData({
       css: app.globalData.css,
       AD: app.globalData.AD
     });
     app.setCssStyle();
     //读取热门商品
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "getList",
+        ishot: 1
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var hots=that.data.hots;
+        hots=res.data;
+        that.setData({
+          hots:hots
+        });
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    });
+    //读取促销商品
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "getList",
+        issale: 1
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var plans = that.data.plans;
+        plans = res.data;
+        that.setData({
+          plans: plans
+        });
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    })
   },
 })
