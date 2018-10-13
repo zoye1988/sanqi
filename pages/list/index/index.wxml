@@ -35,8 +35,8 @@
           <text class="page-grade-text">{{item.commentcount}}</text>
         </view>
         <view class="page-ad page-left">
-          <text class="{{item.plan%5==0 ? '' : 'Hide'}}">满600减100</text>
-          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">满200包邮</text>
+          <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
           <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
         </view>
         <view class="price">

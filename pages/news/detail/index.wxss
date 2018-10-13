@@ -33,6 +33,12 @@
   border:0;
   font-size:12pt;
   background-color: #ffffff;
+  font-weight: bolder;
+}
+.page-title2{
+  border:0;
+  font-size:11pt;
+  background-color: #ffffff;
 }
 .newsdesc{
   font-size:10pt;

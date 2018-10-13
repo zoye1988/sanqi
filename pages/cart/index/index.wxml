@@ -34,7 +34,7 @@
       X
     </view>
   </view>
-  
+
 
   <!--活动标语
   <view class="page-tab {{AD ? 'Show' : 'Hide'}}">
@@ -52,9 +52,9 @@
         <view class="page-title ">{{item.title}}</view>
         <view class="page-desc {{item.ad==1 ? '' : 'Hide'}}">{{item.content}}</view>
         <view class="page-ad page-left">
-          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
-          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
-          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+          <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+          <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
         </view>
         <view class="price">
           <text class="yuan">¥</text>
@@ -62,7 +62,7 @@
           <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
           <text class="page-units">{{item.unit}}</text>
         </view>
-        <view >
+        <view>
           <view class="payment page-body {{css}}_border">
             <view class="page-item item-30 {{css}}_bgColor">
               +
@@ -75,7 +75,7 @@
         </view>
       </view>
       <view class="page-item item-10 page-center">
-        <image src='../../img/del.png'  mode="aspectFit" class="tip" bindtap='cancelCart' data-id='{{item.id}}'></image>
+        <image src='../../img/del.png' mode="aspectFit" class="tip" bindtap='cancelCart' data-id='{{item.id}}'></image>
       </view>
     </view>
 

@@ -12,16 +12,16 @@
       </view>
       <view class="page-desc">
         <image src="../../img/eye.png" class="tip-small2"></image>
-        <text class="page-grade">300</text>
+        <text class="page-grade">{{news.viewer}}</text>
         <text> | </text>
         <image src="../../img/good.png" class="tip-small2"></image>
-        <text class="page-grade">300</text>
+        <text class="page-grade">{{news.love}}</text>
       </view>
       <!--正文-->
       <view class="newsdesc">
-        {{news.desc}}
+        {{news.brief}}
       </view>
-      <view class="content" wx:for="{{news.content}}" wx:key="{{item.id}}">
+      <view class="content" wx:for="{{news.contents}}" wx:key="{{item.id}}">
         {{item.words}}
         <image src="../../res/{{item.img}}"></image>
       </view>
@@ -46,29 +46,29 @@
       </view>
     </view>
 
-    <view class="page-body-small" wx:for="{{ads}}" wx:key="{{item.id}}">
+    <view class="page-body-small" wx:for="{{news.goods}}" wx:key="{{item.id}}">
       <view class="page-item item-30 page-center">
-        <image src='../../res/{{item.img}}' mode="aspectFit" class="page-body-image2"></image>
+        <image src='../../res/{{item.headimg}}' mode="aspectFit" class="page-body-image2"></image>
       </view>
       <view class="page-item item-70 page-border-left">
-        <view class="_page-title">{{item.title}}</view>
+        <view class="page-title2">{{item.title}}</view>
         <view class="page-grade">
           <image src="../../img/selltip.png" class="tip-small2"></image>
-          <text>销售:{{item.sale}}</text>
+          <text>销售:{{item.sellcount}}</text>
           <text>|</text>
           <image src="../../img/comment.png" class="tip-small2"></image>
-          <text>好评率:{{item.comment}}</text>
+          <text>好评率:{{item.commentcount}}</text>
         </view>
         <view class="page-ad">
-          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">满600减100</text>
-          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">满200包邮</text>
-          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+          <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+          <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
         </view>
         <view class="price">
           <text class="yuan">¥</text>
           <text class="page-price">{{item.price}}</text>
-          <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
-          <text class="page-units">{{item.unit}}</text>
+          <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
+          <text class="page-units">{{item.tp}}</text>
         </view>
       </view>
     </view>

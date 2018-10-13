@@ -8,7 +8,9 @@ Page({
   data: {
     css: app.globalData.css,
     AD: app.globalData.AD,
-    lists: []
+    lists: [],
+    ad_package: app.globalData.ad_package,
+    ad_minus: app.globalData.ad_minus
   },
 
   /**

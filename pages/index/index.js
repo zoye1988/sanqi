@@ -19,6 +19,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  onShow:function(){
+    app.setCssStyle();
+  },
   onLoad: function (options) {
     var that = this;
     var host=app.globalData.host;
@@ -26,7 +29,7 @@ Page({
       css: app.globalData.css,
       AD: app.globalData.AD
     });
-    app.setCssStyle();
+    
     //读取热门商品
     wx.request({
       url: host + "goods.do",

@@ -21,16 +21,14 @@ App({
     /**
      * 系统默认参数
      */
-    downloadurl: 'http://127.0.0.1:8080/wxadmin/res/',//默认系统下载链接
-    host: "http://127.0.0.1:8080/wxadmin/",//默认系统数据访问地址
+    downloadurl: 'http://192.168.3.71:8080/wxadmin/res/',//默认系统下载链接
+    host: "http://192.168.3.71:8080/wxadmin/",//默认系统数据访问地址
     //downloadurl: 'http://192.168.31.194:8080/wxadmin/res/',//默认系统下载链接
     //host: "http://192.168.31.194:8080/wxadmin/",//默认系统数据访问地址
 
   },
 
   onShow:function(){
-    console.log("onLoad");
-    console.log(this.globalData.css);
   },
 
   //登录时，全局读取用户信息
@@ -123,6 +121,10 @@ App({
            that.globalData.css=holiday;
            that.globalData.AD=styles.holiday_ad;
         }
+        console.log("setup");
+        wx.switchTab({
+          url: '/pages/index/index'
+        })
       },
       fail: function (res) {
         wx.showModal({
@@ -150,6 +152,7 @@ App({
       backgroundColor: bgColor,
       frontColor: fColor
     })
+    console.log("setCssStyle,this.globalData.css=" + this.globalData.css);
   },
   backHome: function () { //返回首页
     wx.switchTab({

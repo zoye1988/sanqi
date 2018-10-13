@@ -86,14 +86,14 @@
           </view>
           <view class="page-ad">
             <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
-          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
-          <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+            <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+            <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
           </view>
           <view class="price">
             <text class="yuan">¥</text>
             <text class="page-price">{{item.price}}</text>
             <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
-          <text class="page-units">{{item.tp}}</text>
+            <text class="page-units">{{item.tp}}</text>
           </view>
         </view>
       </navigator>
@@ -111,15 +111,15 @@
             <text>好评率:{{item.commentcount}}</text>
           </view>
           <view class="page-ad">
-            <text class="{{item.plan%5==0 ? '' : 'Hide'}}">满600减100</text>
-            <text class="{{item.plan%3==0 ? '' : 'Hide'}}">满200包邮</text>
+            <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+            <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
             <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
           </view>
           <view class="price">
             <text class="yuan">¥</text>
             <text class="page-price">{{item.price}}</text>
             <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
-          <text class="page-units">{{item.tp}}</text>
+            <text class="page-units">{{item.tp}}</text>
           </view>
         </view>
       </navigator>
