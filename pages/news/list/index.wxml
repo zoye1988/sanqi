@@ -10,7 +10,7 @@
     </view>
   </view>
   <!--资讯列表-->
-  <navigator wx:for="{{news}}" wx:key="{{item.nid}}" url="../detail/index?nid={{nid}}">
+  <navigator wx:for="{{news}}" wx:key="{{item.nid}}" url="../detail/index?nid={{item.nid}}">
     <view class="newstime">——— {{item.time}} ———</view>
     <view class="newscontent">
       <view class="newstitle">

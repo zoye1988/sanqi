@@ -57,11 +57,39 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var host = app.globalData.host;
+    var nid=options.nid;
     this.setData({
       css: app.globalData.css,
       AD: app.globalData.AD
     });
     app.setCssStyle();
+    wx.request({
+      url: host + "news.do",
+      method: "post",
+      data: {
+        method: "getDetail",
+        nid:nid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var news = res.data;
+        console.log(news);
+        that.setData({
+          news: news
+        });
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    });
   },
 
   /**
