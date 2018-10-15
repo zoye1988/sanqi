@@ -52,9 +52,9 @@
         <view class="page-title ">{{item.title}}</view>
         <view class="page-desc {{item.ad==1 ? '' : 'Hide'}}">{{item.content}}</view>
         <view class="page-ad page-left">
-          <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
-          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
-          <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
         </view>
         <view class="price">
           <text class="yuan">¥</text>

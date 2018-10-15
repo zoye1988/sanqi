@@ -18,7 +18,7 @@
 
   <!--商品列表-->
   <view>
-    <navigator class="page-body-border page-padding " wx:for="{{lists}}" wx:key="{{item.gid}}" url="../detail/index">
+    <navigator class="page-body-border page-padding " wx:for="{{lists}}" wx:key="{{item.gid}}" url="../detail/index?gid={{item.gid}}">
       <view class="page-item item-40 page-center ">
         <image src='../../res/{{item.headimg}}' mode="aspectFit" class="page-body-image"></image>
       </view>

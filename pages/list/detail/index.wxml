@@ -11,7 +11,7 @@
   <!--封面图片-->
   <view>
     <swiper class="cover" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{detail.coverImgs}}" wx:key="{{item.id}}">
+      <block wx:for="{{good.imgs}}" wx:key="{{item.id}}">
         <swiper-item>
           <image src='../../res/{{item}}' mode="aspectFit"></image>
         </swiper-item>
@@ -24,33 +24,33 @@
     <view style='padding:5px;padding-left:10px;padding-right:10px;'>
       <view class="page-body">
         <view class="page-item item-90 page-title">
-          <text>{{detail.title}}</text>
+          <text>{{good.title}}</text>
         </view>
         <view class="page-item item-10 page-center" bindtap='setLove'>
-          <image src="../../img/unlove.png" class="tip {{detail.love==true?'Hide':''}}"></image>
-          <image src="../../img/love.png" class="tip {{detail.love==true?'':'Hide'}}"></image>
+          <image src="../../img/unlove.png" class="tip {{love==true?'Hide':''}}"></image>
+          <image src="../../img/love.png" class="tip {{love==true?'':'Hide'}}"></image>
         </view>
       </view>
-      <view class="page-desc">{{detail.desc}}</view>
+      <view class="page-desc">{{good.brief}}</view>
       <view class="page-ad page-left">
-        <text class="{{detail.ad%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
-        <text class="{{detail.ad%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
-        <text class="{{detail.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+        <text class="{{good.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+        <text class="{{good.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+        <text class="{{good.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
       </view>
       <view class='page-body'>
         <view class="page-item item-60">
           <text class="yuan">¥</text>
-          <text class="page-price">{{detail.price}}</text>
-          <text class="page-sale {{detail.ad%2==0 ? '' : 'Hide'}}">¥{{detail.sale}}</text>
-          <text class='page-units'>{{detail.unit}}</text>
+          <text class="page-price">{{good.price}}</text>
+          <text class="page-sale {{detail.plan%2==0 ? '' : 'Hide'}}">¥{{good.preprice}}</text>
+          <text class='page-units'>{{good.tp}}</text>
           <view class="page-grade">
             <image src="../../img/selltip.png" class="tip-small2"></image>
             <text>销售:</text>
-            <text class="page-grade-text">{{detail.sale}}</text>
+            <text class="page-grade-text">{{good.sellcount}}</text>
             <text>|</text>
             <image src="../../img/comment.png" class="tip-small2"></image>
             <text>好评率:</text>
-            <text class="page-grade-text">{{detail.comment}}</text>
+            <text class="page-grade-text">{{good.commentcount}}</text>
           </view>
         </view>
 
@@ -74,19 +74,15 @@
   <view class='infoTab {{css}}_border'>
     <view class="infoTab-view">
       <text>产 地：</text>
-      <text class="info-text">{{detail.origin}}</text>
+      <text class="info-text">{{good.place}}</text>
     </view>
     <view class="infoTab-view">
       <text>规 格：</text>
-      <text class="info-text">{{detail.unit}}</text>
-    </view>
-    <view class="infoTab-view">
-      <text>快 递：</text>
-      <text class="info-text">{{ad_package}}</text>
+      <text class="info-text">{{good.tp}}</text>
     </view>
     <view class="infoTab-view">
       <text>包 装：</text>
-      <text class="info-text">{{detail.packager}}</text>
+      <text class="info-text">{{good.packages}}</text>
     </view>
   </view>
 
@@ -96,25 +92,28 @@
       产品介绍
     </view>
     <view class="swiper-tab-list {{css}}_borderLeft {{currentTab==1 ? '' : 'default_fontColor'}}" data-current="1" bindtap="swichNav">
-      用户评价(102)
+      用户评价({{comments}})
     </view>
   </view>
 
   <swiper current="{{currentTab}}" class="swiper-box" style="height:{{defaultHeight}}px" duration="300" bindchange="bindChange">
     <swiper-item>
       <!--产品介绍-->
-      <view class="page-body" wx:for="{{detail.Imgs}}" wx:key="{{item.id}}" style='width:100%;'>
+      <view class="page-body" wx:for="{{good.descImgs}}" wx:key="{{item.id}}" style='width:100%;'>
         <image src='http://www.zhurendata.com/wxadmin/res/{{item}}' style='width:100%;' mode="aspectFilt"></image>
       </view>
     </swiper-item>
 
     <swiper-item>
-      <view class="comment" wx:for="{{comments}}" wx:key="{{item.cid}}">
+      <view class="{{comments!=0?'Hide':'nocomment'}}">
+        暂无评论
+      </view>
+      <view class="comment" wx:for="{{good.comment}}" wx:key="{{item.cid}}">
         <view class="comment-head">
-          <image class="comment-head-image" src='../../res/{{item.header}}'></image>
+          <image class="comment-head-image" src='../../res/{{item.headimg}}'></image>
           <view class="comment-name">
             <view>{{item.uname}}</view>
-            <view class="comment-star" style='background-position:0px -{{(5-item.degree)*15}}px'></view>
+            <view class="comment-star" style='background-position:0px -{{(5-item.degree)*16}}px'></view>
           </view>
         </view>
         <view class="comment-title">{{item.title}}</view>

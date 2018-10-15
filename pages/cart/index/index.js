@@ -8,6 +8,8 @@ Page({
   data: {
     css: app.globalData.css,
     AD: app.globalData.AD,
+    ad_package: app.globalData.ad_package,
+    ad_minus: app.globalData.ad_minus,
     showMsg:true,
     carts: [
       {
@@ -77,7 +79,7 @@ Page({
       css: app.globalData.css,
       AD: app.globalData.AD
     });
-    //app.setCssStyle();
+    app.setCssStyle();
   },
 
   /**
