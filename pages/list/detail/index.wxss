@@ -54,9 +54,10 @@
   border-right: 1px solid #cdcdcd;
   color: #000000;
 }
-.page-desc{
-  overflow-y:visible;
-  height: auto;
+.page-desc2{
+  line-height: 18px;
+  font-size:9pt;
+  color:#878686;
 }
 .desc-flag{
   font-size:20pt;text-align:center;height:33%;padding-top:10%;

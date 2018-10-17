@@ -19,10 +19,10 @@ Page({
     interval: 3000,
     duration: 500,
     count: 1,  //购物总数
-    comments:0,
+    comments: 0,
     love: true,
     good: {
-      id: 3,
+      gid: 3,
       title: "文山七丹药业血栓通(25mg)",
       brief: "这是一款神奇的产品,对'三高'患者有较好的功效。",
       tp: "500g/罐",
@@ -34,9 +34,9 @@ Page({
       plan: 0,
       packages: "铝塑封盒",
       imgs: [],                 //封面图片
-      descImgs: [],                   //宣传图片和文案
-      comment: []
+      descImgs: []                   //宣传图片和文案
     },
+    comment: []
   },
 
   /**
@@ -73,6 +73,32 @@ Page({
         //读取图片数字的长度，确定swiper的高度
         that.setData({
           defaultHeight: good.descImgs.length * 240,
+        });
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    });
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "commentList",
+        gid: gid,
+        page: 0
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var comment = res.data.comment;
+        that.setData({
+          comment: comment
         });
       },
       fail: function (res) {
@@ -163,8 +189,43 @@ Page({
       count: count
     });
   },
-
-
+  moreComment: function () {
+    var that = this;
+    var gid = that.data.good.gid;
+    var host = app.globalData.host;
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "commentList",
+        gid: gid,
+        page: that.data.comment.length
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var _comment = res.data.comment;
+        var comment = that.data.comment;
+        for (var bt in _comment) {
+          comment.push(_comment[bt]);
+        }
+        var _defaultHeight =30+ that.data.comment.length * 209;
+        that.setData({
+          comment: comment,
+          defaultHeight: _defaultHeight
+        });
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -213,7 +274,8 @@ Page({
       if (current == 0) {
         _defaultHeight = that.data.good.descImgs.length * 240;
       } else if (current == 1) {
-        _defaultHeight = that.data.good.comment.length * 204 + 60;
+        _defaultHeight = 30+that.data.comment.length * 209;
+        console.log("_defaultHeight=" + _defaultHeight);
       }
       this.setData({
         defaultHeight: _defaultHeight,
@@ -232,7 +294,7 @@ Page({
     if (current == 0) {
       _defaultHeight = that.data.good.descImgs.length * 240;
     } else if (current == 1) {
-      _defaultHeight = that.data.good.comment.length * 204 + 60;
+      _defaultHeight =30+that.data.comment.length * 209;
     }
     this.setData({
       defaultHeight: _defaultHeight

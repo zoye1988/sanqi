@@ -131,7 +131,7 @@
 }
 .page-body-image2{
   width:95%;
-  height:70px;
+  height:80px;
 }
 .page-body-image3{
   width:90%;
@@ -174,8 +174,8 @@
   text-align: left;
 }
 .page-desc{
-  height:20px;
-  line-height: 20px;
+  line-height: 18px;
+  height:18px;
   overflow-y: hidden;
   font-size:9pt;
   color:#878686;
@@ -439,8 +439,8 @@
   display: flex;
 }
 .comment-head-image{
-  width:25px;
-  height: 25px;
+  width:30px;
+  height: 30px;
   border-radius:11px;
 }
 .comment-name{
@@ -460,6 +460,8 @@
 .comment-title{
   margin-top:10px;
   line-height: 15px;
+  height:45px;
+  overflow-y: hidden;
   font-size:9pt;
 }
 .comment-imgs{

@@ -2,17 +2,17 @@
 App({
   globalData: {
     ustatus: null,
-    css:"common",
-    AD:1,     //广告位
-    ad_package:"满200包邮",
-    ad_minus:"满100减10",
-    user:{
-      uname:"",
-      uimg:"",
-      openid:"",
-      tel:"",
-      role_EN:"customer",
-      role_CN:"普通用户",
+    css: "",
+    AD: 1,     //广告位
+    ad_package: "满200包邮",
+    ad_minus: "满100减10",
+    user: {
+      uname: "",
+      uimg: "",
+      openid: "",
+      tel: "",
+      role_EN: "customer",
+      role_CN: "普通用户",
       /*
       产品代理
       店小二
@@ -21,31 +21,30 @@ App({
     /**
      * 系统默认参数
      */
-    downloadurl: 'http://192.168.3.71:8080/wxadmin/res/',//默认系统下载链接
-    host: "http://192.168.3.71:8080/wxadmin/",//默认系统数据访问地址
+    downloadurl: 'http://192.168.1.120:8080/wxadmin/res/',//默认系统下载链接
+    host: "http://192.168.1.120:8080/wxadmin/",//默认系统数据访问地址
     //downloadurl: 'http://192.168.31.194:8080/wxadmin/res/',//默认系统下载链接
     //host: "http://192.168.31.194:8080/wxadmin/",//默认系统数据访问地址
 
   },
 
-  onShow:function(){
+  onShow: function () {
   },
 
   //登录时，全局读取用户信息
-  onLaunch:function(){
-    console.log("onLaunch");
-    this.getCssStyle();
+  onLaunch: function () {
+
   },
   /***
    * 获取用户信息 
    */
-  getLogin:function(){
-    var that=this;
-    var host=this.globalData.host;
+  getLogin: function () {
+    var that = this;
+    var host = this.globalData.host;
     wx.getUserInfo({
       success: function (res) {
         console.log(res.code);
-        if (1==1) {
+        if (1 == 1) {
           //发起网络请求
           wx.request({
             url: host + "user.do",
@@ -87,9 +86,9 @@ App({
           console.log('获取用户登录态失败！' + res.errMsg)
         }
         var userInfo = res.userInfo;
-        that.globalData.user.uname= userInfo.nickName;
-        that.globalData.user.uimg= userInfo.avatarUrl;
-        that.globalData.user.tel="15288653843";
+        that.globalData.user.uname = userInfo.nickName;
+        that.globalData.user.uimg = userInfo.avatarUrl;
+        that.globalData.user.tel = "15288653843";
         wx.setStorageSync("user.uname", that.globalData.user.uname);
         wx.setStorageSync("user.uimg", that.globalData.user.uimg);
         wx.setStorageSync("user.tel", that.globalData.user.tel);
@@ -101,43 +100,9 @@ App({
   /**
    * 检查服务器样式数据
    */
-  getCssStyle:function(){
-    //发起网络请求
+  getCssStyle: function () {
+    console.log(this.globalData.css);
     var that = this;
-    var host = this.globalData.host;
-    wx.request({
-      url: host + "styles.do",
-      method: "post",
-      data: {
-        method: "getStyle"
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        var styles = res.data[0];
-        var holiday=styles.holiday;
-        if (holiday!="" && holiday!=null) {
-           that.globalData.css=holiday;
-           that.globalData.AD=styles.holiday_ad;
-        }
-        console.log("setup");
-        wx.switchTab({
-          url: '/pages/index/index'
-        })
-      },
-      fail: function (res) {
-        wx.showModal({
-          title: "操作异常",
-          content: "请检查网络或重启程序,",
-          showCancel: false,
-          confirmText: "确定"
-        })
-      }
-    })
-  },
-  //每个页面设置统一样式
-  setCssStyle:function(){
     var bgColor = "";
     var fColor = "";
     switch (this.globalData.css) {
@@ -152,7 +117,47 @@ App({
       backgroundColor: bgColor,
       frontColor: fColor
     })
-    console.log("setCssStyle,this.globalData.css=" + this.globalData.css);
+  },
+  //每个页面设置统一样式
+  setCssStyle: function () {
+    var that = this;
+    var host = this.globalData.host;
+    console.log(this.globalData.css);
+    if (this.globalData.css == "") {
+      //发起网络请求
+      wx.request({
+        url: host + "styles.do",
+        method: "post",
+        data: {
+          method: "getStyle"
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          var styles = res.data[0];
+          var holiday = styles.holiday;
+          if (holiday != "" && holiday != null) {
+            that.globalData.css = styles.holiday;
+            that.globalData.AD = styles.holiday_ad;
+          } else {
+            that.globalData.css = "common";
+            that.globalData.AD = 1;
+          }
+          that.getCssStyle();
+        },
+        fail: function (res) {
+          wx.showModal({
+            title: "操作异常",
+            content: "请检查网络或重启程序,",
+            showCancel: false,
+            confirmText: "确定"
+          })
+        }
+      })
+    }else{
+      that.getCssStyle();
+    }
   },
   backHome: function () { //返回首页
     wx.switchTab({

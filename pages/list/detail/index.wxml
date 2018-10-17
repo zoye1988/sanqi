@@ -31,7 +31,7 @@
           <image src="../../img/love.png" class="tip {{love==true?'':'Hide'}}"></image>
         </view>
       </view>
-      <view class="page-desc">{{good.brief}}</view>
+      <view class="page-desc2">{{good.brief}}</view>
       <view class="page-ad page-left">
         <text class="{{good.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
         <text class="{{good.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
@@ -108,7 +108,7 @@
       <view class="{{comments!=0?'Hide':'nocomment'}}">
         暂无评论
       </view>
-      <view class="comment" wx:for="{{good.comment}}" wx:key="{{item.cid}}">
+      <view class="comment" wx:for="{{comment}}" wx:key="{{item.cid}}">
         <view class="comment-head">
           <image class="comment-head-image" src='../../res/{{item.headimg}}'></image>
           <view class="comment-name">
@@ -122,7 +122,7 @@
         </view>
         <view class="comment-time">{{item.datetime}}</view>
       </view>
-      <view class="comment-more {{css}}_bgColor">
+      <view class="comment-more {{css}}_bgColor" bindtap='moreComment'>
         更多评论
       </view>
     </swiper-item>

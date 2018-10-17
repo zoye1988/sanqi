@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/setup/index",
     "pages/index/index",
     "pages/list/index/index",
     "pages/list/detail/index",
@@ -16,7 +15,8 @@
     "pages/me/servicer/customer/index",
     "pages/me/servicer/seller/index",
     "pages/me/bill/logistics/index",
-    "pages/me/love/index/index"
+    "pages/me/love/index/index",
+    "pages/setup/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",
