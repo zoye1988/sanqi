@@ -2,10 +2,14 @@
 App({
   globalData: {
     ustatus: null,
+    carts:[],
     css: "",
     AD: 1,     //广告位
     ad_package: "满200包邮",
     ad_minus: "满100减10",
+    openid:"",
+    address:"",//默认的地址数据
+    code:"",
     user: {
       uname: "",
       uimg: "",
@@ -21,8 +25,8 @@ App({
     /**
      * 系统默认参数
      */
-    downloadurl: 'http://192.168.1.120:8080/wxadmin/res/',//默认系统下载链接
-    host: "http://192.168.1.120:8080/wxadmin/",//默认系统数据访问地址
+    downloadurl: 'http://127.0.0.1:8080/wxadmin/res/',//默认系统下载链接
+    host: "http://127.0.0.1:8080/wxadmin/",//默认系统数据访问地址
     //downloadurl: 'http://192.168.31.194:8080/wxadmin/res/',//默认系统下载链接
     //host: "http://192.168.31.194:8080/wxadmin/",//默认系统数据访问地址
 
@@ -33,7 +37,99 @@ App({
 
   //登录时，全局读取用户信息
   onLaunch: function () {
-
+    //读取随机用户数据
+    var host=this.globalData.host;
+    var that=this;
+    var code=wx.getStorageSync("code");
+    //随机生成一个用户识别号
+    if(code=='' || code==null){
+      wx.request({
+        url: host + "user.do",
+        method: "post",
+        data: {
+          method: "passanger"
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          var code = res.data.code;
+          wx.setStorageSync("code", code);
+        },
+        fail: function (res) {
+          wx.showModal({
+            title: "操作异常",
+            content: "请检查网络或重启程序,",
+            showCancel: false,
+            confirmText: "确定"
+          })
+        }
+      })
+    }
+  },
+  updateGoods:function(carts){
+    wx.setStorageSync("carts", carts);
+  },
+  updateLoves: function (love,code,gid) {
+    var host=this.globalData.host;
+    var checked=(love==true?1:0);
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "setLove",
+        checked:checked,
+        gid:gid,
+        code:code
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        return res.data.result;
+      },
+      fail: function (res) {
+        
+      }
+    })
+  },
+  setCount:function(gid,count,act){
+    var that = this;
+    var host = this.globalData.host;
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "setCart",
+        code: wx.getStorageSync("code"),
+        gid:gid,
+        act:act,
+        count:count
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var result = res.data.result;
+        if (result==0) {
+          wx.showModal({
+            title: "系统提示",
+            content: "请检查网络或重启程序",
+            showCancel: false,
+            confirmText: "确定"
+          })
+        }
+        return result;
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    })
   },
   /***
    * 获取用户信息 
@@ -41,10 +137,9 @@ App({
   getLogin: function () {
     var that = this;
     var host = this.globalData.host;
-    wx.getUserInfo({
+    wx.login({
       success: function (res) {
-        console.log(res.code);
-        if (1 == 1) {
+        if (res.code) {
           //发起网络请求
           wx.request({
             url: host + "user.do",
@@ -58,7 +153,7 @@ App({
             },
             success: function (res) {
               var openid = res.data.openid;
-              console.log(openid);
+              console.log("openid="+openid);
               if (openid == "" || openid == null || openid == "null") {
                 wx.showModal({
                   title: "系统提示",
@@ -67,10 +162,7 @@ App({
                   confirmText: "确定"
                 })
               } else {
-                that.setData({
-                  openid: openid
-                })
-                that.checkAuth();//发送审核核实请求
+                wx.setStorageSync("openid", openid);
               }
             },
             fail: function (res) {
@@ -85,15 +177,6 @@ App({
         } else {
           console.log('获取用户登录态失败！' + res.errMsg)
         }
-        var userInfo = res.userInfo;
-        that.globalData.user.uname = userInfo.nickName;
-        that.globalData.user.uimg = userInfo.avatarUrl;
-        that.globalData.user.tel = "15288653843";
-        wx.setStorageSync("user.uname", that.globalData.user.uname);
-        wx.setStorageSync("user.uimg", that.globalData.user.uimg);
-        wx.setStorageSync("user.tel", that.globalData.user.tel);
-        wx.setStorageSync("user.role", "customer");
-        wx.setStorageSync("ustatus", "");
       }
     });
   },
@@ -160,12 +243,12 @@ App({
     }
   },
   backHome: function () { //返回首页
-    wx.switchTab({
+    wx.reLaunch({
       url: '/pages/index/index'
     })
   },
   backCart: function () { //返回购物车
-    wx.switchTab({
+    wx.reLaunch({
       url: '/pages/cart/index/index'
     })
   },

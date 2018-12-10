@@ -8,6 +8,8 @@ Page({
   data: {
     css: app.globalData.css,
     AD: app.globalData.AD,
+    host: app.globalData.host,
+    downloadurl: app.globalData.downloadurl,
     ad_package: app.globalData.ad_package,
     ad_minus: app.globalData.ad_minus,
     // tab切换  
@@ -18,9 +20,10 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
-    count: 1,  //购物总数
+    count: 0,  //购物总数
     comments: 0,
-    love: true,
+    love: false,
+    carts: [],
     good: {
       gid: 3,
       title: "文山七丹药业血栓通(25mg)",
@@ -34,7 +37,8 @@ Page({
       plan: 0,
       packages: "铝塑封盒",
       imgs: [],                 //封面图片
-      descImgs: []                   //宣传图片和文案
+      descImgs: [],                   //宣传图片和文案
+      headimg: "temp.png"
     },
     comment: []
   },
@@ -44,7 +48,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var host = app.globalData.host;
+    var host =this.data.host;
     this.setData({
       css: app.globalData.css,
       AD: app.globalData.AD
@@ -135,7 +139,62 @@ Page({
         })
       }
     });
-
+    //读取收藏的商品
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "getLove",
+        gid: gid,
+        code: wx.getStorageSync("code")
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var result = res.data.result;
+        if (result == 1) {
+          that.setData({
+            love: true
+          })
+        }
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    });
+    //读取的商品
+    wx.request({
+      url: host + "goods.do",
+      method: "post",
+      data: {
+        method: "getCart",
+        gid: gid,
+        code: wx.getStorageSync("code")
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var sum = res.data.sum;
+        that.setData({
+          count: sum
+        })
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: "操作异常",
+          content: "请检查网络或重启程序,",
+          showCancel: false,
+          confirmText: "确定"
+        })
+      }
+    });
   },
 
   /**
@@ -149,8 +208,13 @@ Page({
    * 设置收藏
    */
   setLove: function () {
-    console.log("setLOVE");
-    var love = this.data.detail.love;
+    var that=this;
+    var love = this.data.love;
+    var gid = this.data.good.gid;
+    var host = this.data.host;
+    var code = wx.getStorageSync("code");
+    //读取cookie中的商品数量
+
     var title = "";
     if (love == true) {
       love = false;
@@ -159,40 +223,67 @@ Page({
       love = true;
       title = "收藏成功"
     }
-    this.setData({
-      'detail.love': love
-    });
-    wx.showToast({
-      title: title,
-      duration: 1000
-    })
+    if (app.updateLoves(love, code, gid)==0){
+      wx.showModal({
+        title: "操作异常",
+        content: "请检查网络或重启程序,",
+        showCancel: false,
+        confirmText: "确定"
+      })
+    }else{
+      that.setData({
+        love: love
+      });
+      wx.showToast({
+        title: title,
+        duration: 1000
+      })
+    }
   },
 
   /*
   countPlus
   **/
   countPlus: function () {
-    var count = this.data.count;
-    this.setData({
-      count: ++count
+    var that=this;
+    var count = this.data.count+1;
+    that.setData({
+      count: count
     });
+    if (app.setCount(this.data.good.gid, count,'add') == 0) {
+      wx.showModal({
+        title: "操作异常",
+        content: "请检查网络或重启程序,",
+        showCancel: false,
+        confirmText: "确定"
+      })
+    }
   },
   /*
   countMinus
   **/
   countMinus: function () {
-    var count = this.data.count;
-    if (--count < 0) {
+    var that=this;
+    var count = this.data.count-1;
+    if (count < 0) {
       count = 0;
     }
-    this.setData({
+    that.setData({
       count: count
     });
+    if(app.setCount(this.data.good.gid, count,'minus')==0){
+      wx.showModal({
+        title: "操作异常",
+        content: "请检查网络或重启程序,",
+        showCancel: false,
+        confirmText: "确定"
+      })
+    }
   },
   moreComment: function () {
     var that = this;
     var gid = that.data.good.gid;
-    var host = app.globalData.host;
+    var host = this.data.host;
     wx.request({
       url: host + "goods.do",
       method: "post",
@@ -210,7 +301,7 @@ Page({
         for (var bt in _comment) {
           comment.push(_comment[bt]);
         }
-        var _defaultHeight =30+ that.data.comment.length * 209;
+        var _defaultHeight = 30 + that.data.comment.length * 209;
         that.setData({
           comment: comment,
           defaultHeight: _defaultHeight
@@ -274,7 +365,7 @@ Page({
       if (current == 0) {
         _defaultHeight = that.data.good.descImgs.length * 240;
       } else if (current == 1) {
-        _defaultHeight = 30+that.data.comment.length * 209;
+        _defaultHeight = 30 + that.data.comment.length * 209;
         console.log("_defaultHeight=" + _defaultHeight);
       }
       this.setData({
@@ -294,7 +385,7 @@ Page({
     if (current == 0) {
       _defaultHeight = that.data.good.descImgs.length * 240;
     } else if (current == 1) {
-      _defaultHeight =30+that.data.comment.length * 209;
+      _defaultHeight = 30 + that.data.comment.length * 209;
     }
     this.setData({
       defaultHeight: _defaultHeight

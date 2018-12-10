@@ -80,6 +80,8 @@
   width:97%;
   margin:0 auto;
   margin-top:5px;
+  border-radius: 5px;
+
 }
 .infoTab-view{
   margin:6px;

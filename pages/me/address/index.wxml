@@ -4,31 +4,31 @@
     <view>~ 空空如也 ~</view>
   </view>
   <!--地址-->
-  <view class="address-border page-padding" wx:for="{{lists}}" wx:key="{{item.id}}">
+  <view class="address-border page-padding" wx:for="{{lists}}" wx:key="{{item.aid}}">
     <view class="page-body">
       <view class="page-item item-40 page-left page-title">
         <image src="../../img/uname.png" class="tip-small"></image>
-        {{item.uname}}
+        {{item.name}}
       </view>
       <view class="page-item item-60 page-center page-title">
         <image src="../../img/uphone.png" class="tip-small"></image>
-        {{item.uphone}}
+        {{item.tel}}
       </view>
     </view>
     <view class="page-body">
       <view class="page-item item-100 page-left page-desc">
         <image src="../../img/uaddress.png" class="tip-small"></image>
-        {{item.address}}
+        {{item.location}}
       </view>
     </view>
     <view class="page-body">
       <view class="page-item item-80 page-left">
-        <radio class="radio" checked="{{item.checked}}" bindtap='updateAddress' data-index='{{item.id}}'>
+        <radio class="radio" checked="{{item.checked}}" bindtap='updateAddress' data-index='{{item.aid}}'>
           <text>默认地址</text>
         </radio>
       </view>
       <view class="page-item item-20 page-center">
-        <image src="../../img/del.png" class="tip {{item.checked==true?'Hide':''}}" data-index='{{item.id}}' bindtap='delAddress'></image>
+        <image src="../../img/del.png" class="tip {{item.checked==true?'Hide':''}}" data-index='{{item.aid}}' bindtap='delAddress'></image>
       </view>
     </view>
   </view>

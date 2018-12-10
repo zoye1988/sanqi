@@ -13,7 +13,7 @@
       </view>
       <view class="phone">
         <image src='../../img/role.png'></image>
-        {{user.tel}}
+        {{user.role_CN}}
       </view>
     </view>
     <view class="page-item">
@@ -65,7 +65,7 @@
           </view>
           <view class="head">联系地址</view>
           <view class="desc">
-            <text>曲靖市麒麟区开化街道010号曲靖市消防大队</text>
+            <text>{{address}}</text>
           </view>
         </view>
       </navigator>
@@ -95,7 +95,7 @@
           </view>
           <view class="head">我的收藏</view>
           <view class="desc">
-            <text>3件商品被收藏</text>
+            <text>{{lovecount}} 件商品被收藏</text>
           </view>
         </view>
       </navigator>
@@ -113,5 +113,14 @@
       </navigator>
     </view>
   </view>
-
+</view>
+<!--注册弹屏-->
+<view class="{{openid?'Hide':'page-hide'}}">
+</view>
+<view class="{{openid?'Hide':'page-Register'}}">
+  <image src="../../img/register.png" style='width:50px;height:50px;margin-top:30%;'></image>
+  <view style='height:30%;font-size:11pt;margin-top:10px;'>注册用户</view>
+  <view style='height:30%;'>
+    <button style='width:130px;font-size:10pt;margin-top:10px;' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+  </view>
 </view>

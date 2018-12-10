@@ -61,11 +61,15 @@ Page({
     } else {
       app.getCssStyle();
     }
+    that.setData({
+      css: app.globalData.css,
+      AD: app.globalData.AD
+    });
   },
   onLoad: function (options) {
     var that = this;
     var host=app.globalData.host;
-    
+    console.log("index_show" + app.globalData.css);
     //读取热门商品
     wx.request({
       url: host + "goods.do",

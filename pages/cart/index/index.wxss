@@ -46,6 +46,7 @@
 }
 .page-ad{
   height:auto;
+  margin-top:5px;
 }
 .page-price{
   font-size: 15pt;

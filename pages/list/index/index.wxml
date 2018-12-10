@@ -18,6 +18,10 @@
 
   <!--商品列表-->
   <view>
+    <view class="page-center page-empty {{lists.length==0?'':'Hide'}}">
+      <image src='../../img/empty.png'></image>
+      <view>~ 空空如也 ~</view>
+    </view>
     <navigator class="page-body-border page-padding " wx:for="{{lists}}" wx:key="{{item.gid}}" url="../detail/index?gid={{item.gid}}">
       <view class="page-item item-40 page-center ">
         <image src='../../res/{{item.headimg}}' mode="aspectFit" class="page-body-image"></image>
@@ -51,16 +55,5 @@
         </view>
       </view>
     </navigator>
-
   </view>
-
-  <!--广告位-->
-  <view class="page-foot">
-    <image src='../../img/logo.png' style="height:40px;width:40px;"></image>
-    <text>\n</text>
-    <image src='../../img/logo2.png' style="height:20px;width:80px;"></image>
-    <text>\n</text>
-    <text style='color:#888;font-size:10pt;'>——————— 云南优润商贸有限公司 ———————</text>
-  </view>
-
 </view>

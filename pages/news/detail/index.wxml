@@ -46,7 +46,7 @@
       </view>
     </view>
 
-    <view class="page-body-small" wx:for="{{news.goods}}" wx:key="{{item.id}}">
+    <navigator class="page-body-small" wx:for="{{news.goods}}" wx:key="{{item.id}}"  url="../../list/detail/index?gid={{item.gid}}">
       <view class="page-item item-30 page-center">
         <image src='../../res/{{item.headimg}}' mode="aspectFit" class="page-body-image2"></image>
       </view>
@@ -71,7 +71,7 @@
           <text class="page-units">{{item.tp}}</text>
         </view>
       </view>
-    </view>
+    </navigator>
   </view>
 
   <!--点赞-->

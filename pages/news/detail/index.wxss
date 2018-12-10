@@ -38,6 +38,7 @@
 .page-title2{
   border:0;
   font-size:11pt;
+  margin-top:10px;
   background-color: #ffffff;
 }
 .newsdesc{

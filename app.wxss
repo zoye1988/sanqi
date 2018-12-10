@@ -73,7 +73,28 @@
   line-height: 10px;
   margin-top:10px;
 }
-
+.page-Register{
+  height:60vh;
+  width: 60%;
+  background-color:#ffffff;
+  top:20%;
+  left:20%;
+  position: absolute;
+  z-index: 99999;
+  border-radius: 15px;
+  text-align: center;
+  border:1px solid #000021;
+}
+.page-hide{
+  height: 100vh;
+  width:100%;
+  background-color:#cdcdcd;
+  opacity: 0.7;
+  top:0;
+  left:0;
+  position: absolute;
+  z-index: 99990;
+}
 .page-body-border{
   margin:4px auto;
   padding:5px 0px;
@@ -542,7 +563,7 @@
   border:1px solid #ffb53c;
 }
 .common_bg{
-  background: linear-gradient(to left,#ffb53c,#f3f3f3,#f3f3f3);  
+  background: linear-gradient(to left,#ffb53c,#f3f3f3,#ffffff);  
 }
 
 /*

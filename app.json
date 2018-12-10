@@ -16,7 +16,8 @@
     "pages/me/servicer/seller/index",
     "pages/me/bill/logistics/index",
     "pages/me/love/index/index",
-    "pages/setup/index"
+    "pages/setup/index",
+    "pages/cart/list/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",

@@ -9,15 +9,15 @@
     <view class="page-item item-30">
       <view style='line-height:30px;'>
         <text class="yuan">¥</text>
-        <text class="page-price">5000.15</text>
+        <text class="page-price">{{totals}}</text>
       </view>
-      <view class="page-count">2件商品</view>
+      <view class="page-count">{{count}} 件商品</view>
     </view>
     <view class="page-item item-25 page-center cartbtn bg_gray " bindtap='clearCart'>
       <image src="../../img/rubbish.png" class="tip-big"></image>
       <text style='color:#ffffff;'>全部清空</text>
     </view>
-    <view class="page-item item-25 page-center bg_red  cartbtn">
+    <view class="page-item item-25 page-center bg_red  cartbtn" bindtap='receipt'>
       <image src="../../img/pay.png" class="tip-big"></image>
       <text style='color:#ffffff;'>前往结算</text>
     </view>
@@ -44,41 +44,46 @@
 
   <!--商品列表-->
   <view>
-    <view class="page-body-border " wx:for="{{carts}}" wx:key="{{item.id}}">
+    <view class="page-center page-empty {{carts.length==0?'':'Hide'}}">
+      <image src='../../img/empty.png'></image>
+      <view>~ 空空如也 ~</view>
+    </view>
+    <view class="page-body-border " wx:for="{{carts}}" wx:key="{{item.gid}}">
       <view class="page-item item-30 page-center ">
-        <image src='../../res/{{item.img}}' mode="aspectFit" class="page-body-image"></image>
+        <image src='../../res/{{item.headimg}}' mode="aspectFit" class="page-body-image"></image>
       </view>
       <view class="page-item item-60 page-left">
         <view class="page-title ">{{item.title}}</view>
-        <view class="page-desc {{item.ad==1 ? '' : 'Hide'}}">{{item.content}}</view>
+        <view class="page-desc {{item.plan==1 ? '' : 'Hide'}}">{{item.brief}}</view>
         <view class="page-ad page-left">
-          <text class="{{item.ad%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
-          <text class="{{item.ad%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
-          <text class="{{item.ad%2==0 ? '' : 'Hide'}}">折扣优惠</text>
+          <text class="{{item.plan%5==0 ? '' : 'Hide'}}">{{ad_minus}}</text>
+          <text class="{{item.plan%3==0 ? '' : 'Hide'}}">{{ad_package}}</text>
+          <text class="{{item.plan%2==0 ? '' : 'Hide'}}">折扣优惠</text>
         </view>
         <view class="price">
           <text class="yuan">¥</text>
           <text class="page-price">{{item.price}}</text>
-          <text class="page-sale {{item.ad%2==0 ? '' : 'Hide'}}">¥{{item.sale}}</text>
-          <text class="page-units">{{item.unit}}</text>
+          <text class="page-sale {{item.plan%2==0 ? '' : 'Hide'}}">¥{{item.preprice}}</text>
+          <text class="page-units">{{item.tp}}</text>
         </view>
         <view>
           <view class="payment page-body {{css}}_border">
-            <view class="page-item item-30 {{css}}_bgColor">
+            <view class="page-item item-30 {{css}}_bgColor" data-gid='{{item.gid}}' bindtap='countPlus'>
               +
             </view>
-            <view class="page-item item-40 paynum">1</view>
-            <view class="page-item item-30 {{css}}_bgColor">
+            <view class="page-item item-40 paynum">{{item.counts}}</view>
+            <view class="page-item item-30 {{css}}_bgColor" data-gid='{{item.gid}}' bindtap='countMinus'>
               -
             </view>
           </view>
         </view>
       </view>
       <view class="page-item item-10 page-center">
-        <image src='../../img/del.png' mode="aspectFit" class="tip" bindtap='cancelCart' data-id='{{item.id}}'></image>
+        <image src='../../img/del.png' mode="aspectFit" class="tip" bindtap='cancelCart' data-gid='{{item.gid}}'></image>
       </view>
     </view>
 
   </view>
+
 
 </view>

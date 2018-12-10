@@ -100,7 +100,7 @@
     <swiper-item>
       <!--产品介绍-->
       <view class="page-body" wx:for="{{good.descImgs}}" wx:key="{{item.id}}" style='width:100%;'>
-        <image src='http://www.zhurendata.com/wxadmin/res/{{item}}' style='width:100%;' mode="aspectFilt"></image>
+        <image src='{{downloadurl}}{{item}}' style='width:100%;' mode="aspectFilt"></image>
       </view>
     </swiper-item>
 
